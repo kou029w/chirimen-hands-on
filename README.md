@@ -86,14 +86,66 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 ---
 
+## CHIRIMEN スターターキットの確認
+
+![h:600](./assets/chirimen-starter-kit.png)
+
+<!-- _footer: https://tutorial.chirimen.org/raspi/section0#section-1 -->
+
+---
+
+## Raspberry Pi の起動
+
+![h:600](./assets/setup-raspi.jpg)
+
+<!-- _footer: https://tutorial.chirimen.org/raspi/section0#chirimen-for-raspberry-pi--1 -->
+
+---
+
+## Wi-Fi の設定
+
+Raspberry Pi の起動後、画面右上のパネルをクリックして設定を行います
+
+![](./assets/setup-wifi.png)
+
+(接続情報は会場で確認しましょう)
+
+<!-- _footer: https://tutorial.chirimen.org/raspi/section0#wifi- -->
+
+---
+
+## ブレッドボードでの配線
+
+![h:600](./assets/led-blink.dio.png)
+
+<!-- _footer: https://tutorial.chirimen.org/raspi/section0#section-7 -->
+
+---
+
+## サンプルコードの実行
+
+ブラウザー > Examples > GPIO Examples > GPIO-Blink > CSB (CodeSandbox)
+
+![h:480](./assets/link-to-led-blink-csb.jpg)
+
+<!-- _footer: CHIRIMEN Examples https://chirimen.org/chirimen/gc/top/examples/ -->
+
+---
+
+## ここまでのまとめ
+
+- CHIRIMEN for Raspberry Pi の起動
+- LED を制御するサンプルコード (通称 LED チカチカ、L チカ) の実行
+
+---
+
 ## 後付
 
 ---
 
 ## CodeSandbox の使い方
 
-- [GitHub と CodeSandbox の使い方](https://kou029w.github.io/github-and-codesandbox-guide/)
-- [CodeSandbox ガイド](https://csb-jp.github.io/)
+- [CodeSandbox の基本的な使い方](https://csb-jp.github.io/docs/usage)
 
 ---
 
