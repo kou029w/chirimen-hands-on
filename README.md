@@ -143,6 +143,43 @@ Raspberry Pi の起動後、画面右上のパネルをクリックして設定�
 
 ---
 
+## GitHub のアカウント登録
+
+[GitHub > Sign up](https://github.com/signup) からアカウントを作成します。
+アカウントに必要な項目を入力します。
+
+![h:480](./assets/signup-github.png)
+
+---
+
+## GitHub のアカウント登録
+
+![h:480](./assets/signup-github-verify.png)
+
+<!-- _footer: Join GitHub https://github.com/signup -->
+
+---
+
+## GitHub のアカウント登録
+
+入力したメールアドレスに登録用のメールが届くので確認します。
+
+![h:480](./assets/signup-github-verify-code.png)
+
+<!-- _footer: Join GitHub https://github.com/signup -->
+
+---
+
+## GitHub のアカウント登録
+
+次のような画面になれば OK です。
+
+![h:480](./assets/github.png)
+
+<!-- _footer: GitHub https://github.com/ -->
+
+---
+
 ## CodeSandbox の使い方
 
 - [CodeSandbox の基本的な使い方](https://csb-jp.github.io/docs/usage)
