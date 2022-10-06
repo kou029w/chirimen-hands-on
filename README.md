@@ -8,6 +8,10 @@ style: |
   }
 ---
 
+![bg](https://webiotmakers.github.io/static/images/2022/template/ogp.jpg)
+
+---
+
 # CHIRIMEN ハンズオン
 
 2022-10-08/2022-10-09 in 岡山
