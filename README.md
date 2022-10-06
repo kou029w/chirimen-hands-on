@@ -2,6 +2,10 @@
 title: CHIRIMEN ハンズオン
 marp: true
 paginate: true
+style: |
+  section :is(h1, h2, h3, h4, h5, h6) {
+    border-bottom: 10px solid #F5CE52;
+  }
 ---
 
 # CHIRIMEN ハンズオン
@@ -46,7 +50,7 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 基礎編
 
-センサーやモーターの基本的な使い方を理解する
+- センサーやモーターの基本的な使い方を理解する
 
 ---
 
