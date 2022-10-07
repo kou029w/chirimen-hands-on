@@ -82,11 +82,30 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 ---
 
-## CHIRIMEN スターターキットの確認
+## 機材の確認
 
-![h:600](./assets/chirimen-starter-kit.png)
+必要なもの
+
+- クリアボックス
+  - ディスプレイ/HDMI ケーブル/変換アダプター/AC アダプター (Type-C)
+  - AC アダプター付き電源タップ/Type-C ケーブル
+  - Raspberry Pi 本体/ヒートシンク
+  - 有線マウス
+- キーボード
+- CHIRIMEN スターターキット
+  - microSD カード
+
+(必要なもの以外はクリアボックスに片付けておきましょう)
 
 <!-- _footer: https://tutorial.chirimen.org/raspi/section0#section-1 -->
+
+---
+
+## ヒートシンクの取り付け
+
+> ![](https://www.okdo.com/wp-content/uploads/2019/10/1-mount-heatsinks.jpg)
+
+<!-- _footer: 画像の引用元: Get started with your OKdo Pi Kit in a flash - OKdo https://www.okdo.com/getstarted/ -->
 
 ---
 
