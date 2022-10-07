@@ -22,6 +22,15 @@ WebDINO Japan シニアエンジニア
 
 ---
 
+## CHIRIMEN とは
+
+![h:480](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1200/https://tutorial.chirimen.org/raspi/imgs/section0/CHIRIMENforRaspberryPi3.png)
+
+Web ブラウザーからハードウェアを制御するプロトタイピング環境
+センサーやモーターなど組み合わせたさまざまなものをつくることができます
+
+---
+
 ## 本日の流れ
 
 準備編 (11:20-12:00)
@@ -42,15 +51,6 @@ WebDINO Japan シニアエンジニア
 基礎編
 
 - センサーやモーターの基本的な使い方を理解する
-
----
-
-## CHIRIMEN とは
-
-![h:480](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1200/https://tutorial.chirimen.org/raspi/imgs/section0/CHIRIMENforRaspberryPi3.png)
-
-Web ブラウザーからハードウェアを制御するプロトタイピング環境
-センサーやモーターなど組み合わせたさまざまなものをつくることができます
 
 ---
 
