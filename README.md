@@ -27,17 +27,21 @@ WebDINO Japan シニアエンジニア
 準備編 (11:20-12:00)
 
 - セットアップ
-- L チカしてみよう
 
 基礎編 (13:00-17:00)
 
+- L チカしてみよう
 - GitHub アカウントの登録
 - GPIO に関する基礎知識
 - I2C に関する基礎知識
 
-応用編
+---
 
-- いろいろなデバイスを試してみよう
+## 本日のゴール
+
+基礎編
+
+- センサーやモーターの基本的な使い方を理解する
 
 ---
 
@@ -58,14 +62,6 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 ---
 
-## 本日のゴール
-
-基礎編
-
-- センサーやモーターの基本的な使い方を理解する
-
----
-
 ## Slack にアクセス (まだの方)
 
 [webiotmakerschallenge.slack.com](https://webiotmakerschallenge.slack.com)
@@ -82,7 +78,7 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 [tutorial.chirimen.org/raspi](https://tutorial.chirimen.org/raspi/)
 または
-「pi chirimen」で検索
+「chirimen チュートリアル」で検索
 
 ---
 
