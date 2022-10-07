@@ -31,6 +31,14 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 ---
 
+## 作品例
+
+![h800](./assets/webiotmakers-gallery.dio.png)
+
+<!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
+
+---
+
 ## 本日の流れ
 
 準備編 (11:20-12:00)
@@ -51,14 +59,6 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 基礎編
 
 - センサーやモーターの基本的な使い方を理解する
-
----
-
-## 作品例
-
-![h800](./assets/webiotmakers-gallery.dio.png)
-
-<!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
 
 ---
 
