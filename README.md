@@ -290,12 +290,7 @@ https://tutorial.chirimen.org/raspi/section3#section-7
 
 ブラウザー > Examples > Remote Examples > REMOTE-I2C-SHT30 > CSB
 
-<iframe src="https://codesandbox.io/embed/github/chirimen-oh/chirimen/tree/master/gc/contrib/examples/remote-i2c-SHT30?autoresize=1&codemirror=1&fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="chirimen-oh/chirimen: remote-i2c-SHT30"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/chirimen-oh/chirimen/tree/master/gc/contrib/examples/remote-i2c-SHT30)
 
 - `relay.subscribe("{ここは書き換えて使用してください}")`
 
