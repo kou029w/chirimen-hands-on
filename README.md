@@ -8,6 +8,10 @@ style: |
   }
 ---
 
+# 1 日目
+
+---
+
 ![bg](https://webiotmakers.github.io/static/images/2022/template/ogp.jpg)
 
 ---
@@ -33,7 +37,7 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 ## 作品例
 
-![h800](./assets/webiotmakers-gallery.dio.png)
+![h:550](./assets/webiotmakers-gallery.dio.png)
 
 <!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
 
@@ -155,10 +159,6 @@ Raspberry Pi の起動後、画面右上のパネルをクリックして設定�
 
 ---
 
-## 後付
-
----
-
 ## GitHub アカウントの登録
 
 ---
@@ -206,8 +206,73 @@ Raspberry Pi の起動後、画面右上のパネルをクリックして設定�
 
 ---
 
+## 後付
+
+---
+
 ## その他
 
 - [デバッグ・トラブルシューティング](https://tutorial.chirimen.org/raspi/debug)
 - [Tips・テクニック](https://tutorial.chirimen.org/raspi/tips)
 - [良くある質問と回答](https://tutorial.chirimen.org/raspi/faq)
+
+---
+
+# 2 日目
+
+---
+
+## いろいろなデバイスを触ってみよう
+
+自分の席に着き次第、自由に進めてもらって OK 👌
+
+---
+
+## 本日の流れ
+
+ハンズオン講習会
+
+- 10:00-10:10 はじめに
+- 11:30-12:00 片付け
+
+アイディアワークショップ
+
+- 13:00-13:30 インプットトーク
+- 13:30-16:00 各チームの作戦会議
+- 16:00-16:20 各チームの進捗共有
+- 16:30-17:00 ハッカソンの説明など
+
+---
+
+## ハッカソンのポイント
+
+- ときめくような素敵なアイディア
+- 審査本番に作品が機能すること
+
+<!-- NOTE: 昨日・今日と技術的な話を中心にやってきましたが、極端な話ハッカソンの本番は、技術的に優れているかどうかは一旦忘れてもらってOK、コピペでOK、人の真似でOK
+ですが限られた時間しかないので、これからの時間で、やりたいことを周りのスタッフに相談したり、Slackで相談してみてください
+ -->
+
+![bg w:800 right:48%](./assets/webiotmakers-gallery.dio.png)
+
+<!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
+
+---
+
+## ⚠ 片付け注意事項
+
+1. 借りたセンサーをすべて返却します
+1. Raspberry Pi の電源を切ります
+1. microSD カードは必ず抜き取り、CHIRIMEN スターターキットを片付けます
+1. クリアボックスを片付けます
+   - できるだけ元の状態に戻してください
+
+(詳しくは会場のスタッフが案内します)
+
+---
+
+## ハッカソンに向けて
+
+リードタイムに注意 特に海外からの発送は時間がかかるので余裕を持って
+品薄なものもあるので早めに調達を
+https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
