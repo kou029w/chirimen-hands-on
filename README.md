@@ -259,6 +259,48 @@ Raspberry Pi の起動後、画面右上のパネルをクリックして設定�
 
 ---
 
+## 応用編
+
+- I2C で複数のデバイス扱う
+- 遠隔制御
+
+---
+
+## I2C で複数のデバイス扱う
+
+それぞれのモジュールの VCC/GND/SDA/SCL を並列接続
+![h:450](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://tutorial.chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
+スレーブアドレスが同じデバイスは同時に接続できません
+https://tutorial.chirimen.org/raspi/section3#section-7
+
+---
+
+## I2C で複数のデバイス扱う - 温湿度センサーと距離センサーの例
+
+<iframe src="https://codesandbox.io/embed/sht30-vl53l0x-pz620y?autoresize=1&codemirror=1&fontsize=14&hidenavigation=1&theme=dark"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="sht30-vl53l0x"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+---
+
+## 遠隔制御
+
+ブラウザー > Examples > Remote Examples > REMOTE-I2C-SHT30 > CSB
+
+<iframe src="https://codesandbox.io/embed/github/chirimen-oh/chirimen/tree/master/gc/contrib/examples/remote-i2c-SHT30?autoresize=1&codemirror=1&fontsize=14&hidenavigation=1&theme=dark"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="chirimen-oh/chirimen: remote-i2c-SHT30"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+- `relay.subscribe("{ここは書き換えて使用してください}")`
+
+---
+
 ## ⚠ 片付け注意事項
 
 1. 借りたセンサーをすべて返却します
