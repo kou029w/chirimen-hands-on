@@ -1,5 +1,5 @@
 ---
-title: CHIRIMEN ハンズオン
+title: CHIRIMEN Raspberry Pi Zero W ハンズオン
 marp: true
 paginate: true
 style: |
@@ -16,9 +16,9 @@ style: |
 
 ---
 
-# CHIRIMEN ハンズオン
+# CHIRIMEN Raspberry Pi Zero W ハンズオン
 
-2022-10-08/2022-10-09 in 岡山
+2022-11-26/2022-11-27 in 愛媛
 
 WebDINO Japan シニアエンジニア
 [渡邉浩平](https://github.com/kou029w)
@@ -45,24 +45,23 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 ## 本日の流れ
 
-準備編 (11:20-12:00)
+ハンズオン講習会
 
-- セットアップ
-
-基礎編 (13:00-17:00)
-
-- L チカしてみよう
-- GitHub アカウントの登録
-- GPIO に関する基礎知識
-- I2C に関する基礎知識
+- 11:10-12:10 セットアップ
+- (休憩)
+- 13:10-15:50 ハンズオン講習会
+  - L チカしてみよう
+  - GPIO に関する基礎知識
+  - I2C に関する基礎知識
+  - 遠隔制御してみよう
+  - 常駐プログラム化してみよう
+- 16:00-17:00 オープンソースに関する基礎知識
 
 ---
 
 ## 本日のゴール
 
-基礎編
-
-- センサーやモーターの基本的な使い方を理解する
+センサーやモーターの基本的な使い方を理解する
 
 ---
 
@@ -74,9 +73,9 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 ## ハンズオン資料
 
-[tutorial.chirimen.org/raspi](https://tutorial.chirimen.org/raspi/)
+[tutorial.chirimen.org/pizero](https://tutorial.chirimen.org/pizero/)
 または
-「chirimen チュートリアル」で検索
+「chirimen pi zero」で検索
 
 ---
 
@@ -91,46 +90,48 @@ Web ブラウザーからハードウェアを制御するプロトタイピン�
 
 必要なもの
 
-- クリアボックス
-  - ディスプレイ/HDMI ケーブル/変換アダプター/AC アダプター (Type-C)
-  - AC アダプター付き電源タップ/Type-C ケーブル
-  - Raspberry Pi 本体/ヒートシンク
-  - 有線マウス
-- キーボード
+- Raspberry Pi Zero W
 - CHIRIMEN スターターキット
   - microSD カード
+- USB ケーブル
 
-(必要なもの以外はクリアボックスに片付けておきましょう)
+(必要なもの以外は片付けておきましょう)
 
-<!-- _footer: https://tutorial.chirimen.org/raspi/section0#section-1 -->
-
----
-
-## ヒートシンクの取り付け
-
-> ![](https://www.okdo.com/wp-content/uploads/2019/10/1-mount-heatsinks.jpg)
-
-<!-- _footer: 画像の引用元: Get started with your OKdo Pi Kit in a flash - OKdo https://www.okdo.com/getstarted/ -->
+<!-- _footer: https://tutorial.chirimen.org/pizero/#pcwifi -->
 
 ---
 
-## Raspberry Pi の起動
+## Raspberry Pi Zero の起動
 
-![h:600](./assets/setup-raspi.jpg)
+![h:400](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
 
-<!-- _footer: https://tutorial.chirimen.org/raspi/section0#chirimen-for-raspberry-pi--1 -->
+<!-- _footer: https://tutorial.chirimen.org/pizero/#a-hrefhttpschirimenorgpizerowebserialconsolepizerowebserialconsolehtmla- -->
+
+---
+
+## ターミナルに接続
+
+https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
+
+↑ こちらにアクセス > Connect and Login PiZero > 接続
+
+![](https://d33wubrfki0l68.cloudfront.net/2521683e759f053b3a77eb7d91f3849f0711267b/84e41/pizero/imgs/serialdialog.png)
 
 ---
 
 ## Wi-Fi の設定
 
-Raspberry Pi の起動後、画面右上のパネルをクリックして設定を行います
-
-![](./assets/setup-wifi.png)
-
 (接続情報は会場で確認しましょう)
 
-<!-- _footer: https://tutorial.chirimen.org/raspi/section0#wifi- -->
+<!-- _footer: https://tutorial.chirimen.org/pizero/#wifi -->
+
+---
+
+## CHIRIMEN 環境設定
+
+CHIRIMEN Panel > Setup CHIRIMEN
+
+<!-- _footer: https://tutorial.chirimen.org/pizero/#chirimen -->
 
 ---
 
@@ -138,83 +139,41 @@ Raspberry Pi の起動後、画面右上のパネルをクリックして設定�
 
 ![h:600](./assets/led-blink.dio.png)
 
-<!-- _footer: https://tutorial.chirimen.org/raspi/section0#section-7 -->
+<!-- _footer: https://tutorial.chirimen.org/pizero/#section-3 -->
 
 ---
 
 ## サンプルコードの実行
 
-ブラウザー > Examples > GPIO Examples > GPIO-Blink > CSB (CodeSandbox)
+```js
+import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec)); // sleep 関数を定義
 
-![h:480](./assets/link-to-led-blink-csb.jpg)
+async function blink() {
+  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
+  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
-<!-- _footer: CHIRIMEN Examples https://chirimen.org/chirimen/gc/top/examples/ -->
+  await port.export("out"); // ポートを出力モードに設定
+
+  // 無限ループ
+  for (;;) {
+    // 1秒間隔で LED が点滅します
+    await port.write(1); // LEDを点灯
+    await sleep(1000); // 1000 ms (1秒) 待機
+    await port.write(0); // LEDを消灯
+    await sleep(1000); // 1000 ms (1秒) 待機
+  }
+}
+
+blink();
+```
 
 ---
 
 ## ここまでのまとめ
 
-- CHIRIMEN for Raspberry Pi の起動
+- CHIRIMEN Raspberry Pi Zero W のセットアップ
 - LED を制御するサンプルコード (通称 LED チカチカ、L チカ) の実行
-
----
-
-## GitHub アカウントの登録
-
----
-
-## GitHub アカウントの登録
-
-[GitHub > Sign up](https://github.com/signup) からアカウントを作成します
-アカウントに必要な項目を入力します
-
-![h:480](./assets/signup-github.png)
-
----
-
-## GitHub アカウントの登録
-
-![h:480](./assets/signup-github-verify.png)
-
-<!-- _footer: Join GitHub https://github.com/signup -->
-
----
-
-## GitHub アカウントの登録
-
-入力したメールアドレスに登録用のメールが届くので確認します
-
-![h:480](./assets/signup-github-verify-code.png)
-
-<!-- _footer: Join GitHub https://github.com/signup -->
-
----
-
-## GitHub アカウントの登録
-
-次のような画面になれば OK
-
-![h:480](./assets/github.png)
-
-<!-- _footer: GitHub https://github.com/ -->
-
----
-
-## CodeSandbox の使い方
-
-- [CodeSandbox の基本的な使い方](https://csb-jp.github.io/docs/usage)
-
----
-
-## 後付
-
----
-
-## その他
-
-- [デバッグ・トラブルシューティング](https://tutorial.chirimen.org/raspi/debug)
-- [Tips・テクニック](https://tutorial.chirimen.org/raspi/tips)
-- [良くある質問と回答](https://tutorial.chirimen.org/raspi/faq)
 
 ---
 
@@ -222,7 +181,7 @@ Raspberry Pi の起動後、画面右上のパネルをクリックして設定�
 
 ---
 
-## いろいろなデバイスを触ってみよう
+## いろいろなデバイスを自由に試してみよう
 
 自分の席に着き次第、自由に進めてもらって OK 👌
 
@@ -262,7 +221,6 @@ Raspberry Pi の起動後、画面右上のパネルをクリックして設定�
 ## 応用編
 
 - I2C で複数のデバイス扱う
-- 遠隔制御
 
 ---
 
@@ -271,38 +229,45 @@ Raspberry Pi の起動後、画面右上のパネルをクリックして設定�
 それぞれのモジュールの VCC/GND/SDA/SCL を並列接続
 ![h:450](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://tutorial.chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
 スレーブアドレスが同じデバイスは同時に接続できません
-https://tutorial.chirimen.org/raspi/section3#section-7
 
 ---
 
 ## I2C で複数のデバイス扱う - 温湿度センサーと距離センサーの例
 
-<iframe src="https://codesandbox.io/embed/sht30-vl53l0x-pz620y?autoresize=1&codemirror=1&fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="sht30-vl53l0x"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+```js
+import { requestI2CAccess } from "node-web-i2c";
+import SHT30 from "@chirimen/sht30";
+import VL53L0X from "@chirimen/vl53l0x";
 
----
+main();
 
-## 遠隔制御
+async function main() {
+  const i2cAccess = await requestI2CAccess();
+  const port = i2cAccess.ports.get(1);
+  const sht30 = new SHT30(port, 0x44);
+  const vl53l0x = new VL53L0X(port, 0x29);
+  await sht30.init();
+  await vl53l0x.init();
 
-ブラウザー > Examples > Remote Examples > REMOTE-I2C-SHT30 > CSB
-
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/chirimen-oh/chirimen/tree/master/gc/contrib/examples/remote-i2c-SHT30)
-
-- `relay.subscribe("{ここは書き換えて使用してください}")`
+  while (true) {
+    const { humidity, temperature } = await sht30.readData();
+    const distance = await vl53l0x.getRange();
+    const message = [
+      `${temperature.toFixed(2)} ℃`,
+      `${humidity.toFixed(2)} %`,
+      `${distance} mm`,
+    ].join(", ");
+    console.log(message);
+    await sleep(500);
+  }
+}
+```
 
 ---
 
 ## ⚠ 片付け注意事項
 
-1. 借りたセンサーをすべて返却します
-1. Raspberry Pi の電源を切ります
-1. microSD カードは必ず抜き取り、CHIRIMEN スターターキットを片付けます
-1. クリアボックスを片付けます
-   - できるだけ元の状態に戻してください
+借りた電子部品はすべて返却しましょう
 
 (詳しくは会場のスタッフが案内します)
 
@@ -313,3 +278,11 @@ https://tutorial.chirimen.org/raspi/section3#section-7
 リードタイムに注意 特に海外からの発送は時間がかかるので余裕を持って
 品薄なものもあるので早めに調達を
 https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
+
+---
+
+## 後付
+
+過去の資料
+
+- [2022 年度 岡山版](/chirimen-hands-on/2022/okayama/)
