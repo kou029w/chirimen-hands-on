@@ -30,7 +30,7 @@ WebDINO Japan シニアエンジニア
 
 ![h:480](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1200/https://tutorial.chirimen.org/raspi/imgs/section0/CHIRIMENforRaspberryPi3.png)
 
-Web ブラウザーからハードウェアを制御するプロトタイピング環境
+JavaScript からハードウェアを制御するプロトタイピング環境
 センサーやモーターなど組み合わせたさまざまなものをつくることができます
 
 ---
