@@ -150,7 +150,7 @@ CHIRIMEN panel > setup CHIRIMEN
 
 ## サンプルコードの実行
 
-new file > "hello.js"
+Create New Text > "hello.js"
 
 ```js
 import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
