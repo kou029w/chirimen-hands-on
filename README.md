@@ -149,6 +149,10 @@ CHIRIMEN panel > setup CHIRIMEN
 
 ## サンプルコードの実行
 
+CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
+
+または
+
 ```js
 import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
 const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec)); // sleep 関数を定義
