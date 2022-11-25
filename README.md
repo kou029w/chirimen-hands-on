@@ -121,6 +121,10 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 ## Wi-Fi の設定
 
+1. wifi panel > SSID、PASS PHRASE に接続情報を入力
+2. SET WiFi
+3. Reboot
+
 (接続情報は会場で確認しましょう)
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/#wifi -->
@@ -129,7 +133,7 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 ## CHIRIMEN 環境設定
 
-CHIRIMEN Panel > Setup CHIRIMEN
+CHIRIMEN panel > setup CHIRIMEN
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/#chirimen -->
 
