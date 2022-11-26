@@ -148,7 +148,7 @@ CHIRIMEN panel > setup CHIRIMEN
 
 ---
 
-## サンプルコードの実行
+## サンプルコードの作成
 
 Create New Text > "hello.js"
 
@@ -178,6 +178,10 @@ blink();
 または
 
 CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
+
+---
+
+## サンプルコードの実行
 
 実行コマンド
 
