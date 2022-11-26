@@ -54,7 +54,6 @@ JavaScript からハードウェアを制御するプロトタイピング環境
   - GPIO に関する基礎知識
   - I2C に関する基礎知識
   - 遠隔制御してみよう
-  - 常駐プログラム化してみよう
 - 16:00-17:00 オープンソースに関する基礎知識
   - 標準技術と OSS の基礎
 
@@ -212,7 +211,9 @@ node hello.js
 
 ハンズオン講習会
 
-- 11:00-11:10 はじめに
+- 11:00-11:05 はじめに
+- 11:05-11:20 常駐プログラム化してみよう
+- 11:20-11:30 I2C で複数のデバイス扱う
 - 12:15-12:30 片付け
 
 アイディアワークショップ
@@ -241,24 +242,41 @@ node hello.js
 
 ## 応用編
 
-- I2C で複数のデバイス扱う
+- 常駐プログラム化してみよう
+- I2C で複数のデバイスを扱う
 
 ---
 
-## I2C で複数のデバイス扱う
+## 常駐プログラム化してみよう
+
+CHIRIMEN panel > Resident App Conf.
+
+- "STOP ALL APPS": 何も実行しません
+- ファイルの指定: 指定したファイルを電源投入後に自動的に実行します
+
+https://tutorial.chirimen.org/pizero/#section-17
+
+---
+
+## デモ
+
+---
+
+## I2C で複数のデバイスを扱う
 
 それぞれのモジュールの VCC/GND/SDA/SCL を並列接続
 ![h:450](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://tutorial.chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
+※ 画像にあるセンサーはあくまで例です
 スレーブアドレスが同じデバイスは同時に接続できません
 
 ---
 
-## I2C で複数のデバイス扱う - 温湿度センサーと距離センサーの例
+## I2C で複数のデバイスを扱う - 温湿度センサーと距離センサーの例
 
 ```js
 import { requestI2CAccess } from "node-web-i2c";
-import SHT30 from "@chirimen/sht30";
-import VL53L0X from "@chirimen/vl53l0x";
+import SHT30 from "@chirimen/sht30"; // 温湿度センサー SHT30
+import VL53L0X from "@chirimen/vl53l0x"; // 距離センサー VL53L0X
 
 main();
 
