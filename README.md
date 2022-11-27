@@ -304,6 +304,22 @@ async function main() {
 
 ---
 
+## CHIRIMEN 対応デバイスリスト
+
+https://tutorial.chirimen.org/partslist
+
+こちらに掲載がないデバイスについても「〇〇をやりたい」「〇〇できるか気になる」などあればご相談ください
+
+---
+
+## 動画教材
+
+[誰でもできる IoT 開発基礎 ～ CHIRIMEN Raspberry Pi Zero W チュートリアル ～](https://webiotmakers.github.io/2021/materials/)
+
+<iframe width="100%" height="640" src="https://www.youtube-nocookie.com/embed/Y0OaDyrnHV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
 ## ⚠ 片付け注意事項
 
 借りた電子部品はすべて返却しましょう
