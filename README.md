@@ -8,7 +8,7 @@ style: |
   }
 ---
 
-# 1 日目
+# 2023-01-09
 
 ---
 
@@ -17,8 +17,6 @@ style: |
 ---
 
 # CHIRIMEN Raspberry Pi Zero W ハンズオン
-
-2022-11-26/2022-11-27 in 愛媛
 
 WebDINO Japan シニアエンジニア
 [渡邉浩平](https://github.com/kou029w)
@@ -33,11 +31,16 @@ WebDINO Japan シニアエンジニア
 JavaScript からハードウェアを制御するプロトタイピング環境
 センサーやモーターなど組み合わせたさまざまなものをつくることができます
 
+<!-- NOTE: 10-20年前は難しいプログラミングが必要でしたが、今はJavaScriptから簡単に作れるようになりました。 -->
+<!-- NOTE: 具体的にはWeb GPIO APIやWeb I2C APIと呼ばれるオープンな仕様に支えられているオープンソースソフトウェアです。 -->
+
 ---
 
 ## 作品例
 
 ![h:550](./assets/webiotmakers-gallery.dio.png)
+
+<!-- NOTE: CHIRIMENを使い、アイディアを凝らしてさまざまな作品を作っています。 -->
 
 <!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
 
@@ -47,15 +50,12 @@ JavaScript からハードウェアを制御するプロトタイピング環境
 
 ハンズオン講習会
 
-- 11:10-12:10 セットアップ
-- 12:10-13:10 〜 お昼休み 〜
-- 13:10-15:50 ハンズオン講習会
+- 14:10-17:50
   - L チカしてみよう
   - GPIO に関する基礎知識
   - I2C に関する基礎知識
   - 遠隔制御してみよう
-- 16:00-17:00 オープンソースに関する基礎知識
-  - 標準技術と OSS の基礎
+- 17:50-18:00 片付け
 
 ---
 
@@ -131,14 +131,6 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 ---
 
-## CHIRIMEN 環境設定
-
-CHIRIMEN panel > setup CHIRIMEN
-
-<!-- _footer: https://tutorial.chirimen.org/pizero/#chirimen -->
-
----
-
 ## ブレッドボードでの配線
 
 ![h:600](./assets/led-blink.dio.png)
@@ -149,7 +141,7 @@ CHIRIMEN panel > setup CHIRIMEN
 
 ## サンプルコードの作成
 
-Create New Text > "hello.js"
+"myApp" > 移動 > Create New Text > "hello.js"
 
 ```js
 import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
@@ -197,142 +189,11 @@ node hello.js
 
 ---
 
-# 2 日目
-
 ---
 
-## いろいろなデバイスを自由に試してみよう
+## フィードバック
 
-自分の席に着き次第、自由に進めてもらって OK 👌
-
----
-
-## 本日の流れ
-
-ハンズオン講習会
-
-- 11:00-11:05 はじめに
-- 11:05-11:20 常駐プログラム化してみよう
-- 11:20-11:30 I2C で複数のデバイス扱う
-- 12:15-12:30 片付け・チーム分け発表
-
-アイディアワークショップ
-
-- 13:30-14:30 アイディアワークショップ
-- 14:30-16:30 各チームの作戦会議
-- 16:30-16:45 各チームの進捗共有
-- 16:45-17:00 ハッカソンの説明など
-
----
-
-## ハッカソンのポイント
-
-- ときめくような素敵なアイディア
-- 審査本番に作品が機能すること
-
-<!-- NOTE: 昨日・今日と技術的な話を中心にやってきましたが、極端な話ハッカソンの本番は、技術的に優れているかどうかは一旦忘れてもらってOK、コピペでOK、人の真似でOK
-ですが限られた時間しかないので、これからの時間で、やりたいことを周りのスタッフに相談したり、Slackで相談してみてください
- -->
-
-![bg w:800 right:48%](./assets/webiotmakers-gallery.dio.png)
-
-<!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
-
----
-
-## 応用編
-
-- 常駐プログラム化してみよう
-- I2C で複数のデバイスを扱う
-
----
-
-## 常駐プログラム化してみよう
-
-CHIRIMEN panel > Resident App Conf.
-
-- "STOP ALL APPS": 何も実行しません
-- ファイルの指定: 指定したファイルを電源投入後に自動的に実行します
-
-https://tutorial.chirimen.org/pizero/#section-17
-
----
-
-## デモ
-
----
-
-## I2C で複数のデバイスを扱う
-
-それぞれのモジュールの VCC/GND/SDA/SCL を並列接続
-![h:450](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://tutorial.chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
-※ 画像にあるセンサーはあくまで例です
-スレーブアドレスが同じデバイスは同時に接続できません
-
----
-
-## I2C で複数のデバイスを扱う - 温湿度センサーと距離センサーの例
-
-```js
-import { requestI2CAccess } from "node-web-i2c";
-import SHT30 from "@chirimen/sht30"; // 温湿度センサー SHT30
-import VL53L0X from "@chirimen/vl53l0x"; // 距離センサー VL53L0X
-
-main();
-
-async function main() {
-  const i2cAccess = await requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const sht30 = new SHT30(port, 0x44);
-  const vl53l0x = new VL53L0X(port, 0x29);
-  await sht30.init();
-  await vl53l0x.init();
-
-  while (true) {
-    const { humidity, temperature } = await sht30.readData();
-    const distance = await vl53l0x.getRange();
-    const message = [
-      `${temperature.toFixed(2)} ℃`,
-      `${humidity.toFixed(2)} %`,
-      `${distance} mm`,
-    ].join(", ");
-    console.log(message);
-    await sleep(500);
-  }
-}
-```
-
----
-
-## CHIRIMEN 対応デバイスリスト
-
-https://tutorial.chirimen.org/partslist
-
-こちらに掲載がないデバイスについても「〇〇をやりたい」「〇〇できるか気になる」などあればご相談ください
-
----
-
-## 動画教材
-
-[誰でもできる IoT 開発基礎 ～ CHIRIMEN Raspberry Pi Zero W チュートリアル ～](https://webiotmakers.github.io/2021/materials/)
-
-<iframe width="100%" height="640" src="https://www.youtube-nocookie.com/embed/Y0OaDyrnHV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
----
-
-## ⚠ 片付け注意事項
-
-借りた電子部品はすべて返却しましょう
-
-(詳しくは会場のスタッフが案内します)
-
----
-
-## ハッカソンに向けて
-
-リードタイムに注意 特に海外からの発送は時間がかかるので余裕を持って
-品薄なものもあるので早めに調達を
-https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
+[このスライドを編集する](https://github.com/kou029w/chirimen-hands-on/edit/main/README.md) / [問題を報告する](https://github.com/kou029w/chirimen-hands-on/issues/new)
 
 ---
 
@@ -341,3 +202,4 @@ https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
 過去の資料
 
 - [2022 年度 岡山版](/chirimen-hands-on/2022/okayama/)
+- [2022 年度 愛媛版](/chirimen-hands-on/2022/ehime/)
