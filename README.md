@@ -204,3 +204,12 @@ node hello.js
 
 - [2022 年度 岡山版](/chirimen-hands-on/2022/okayama/)
 - [2022 年度 愛媛版](/chirimen-hands-on/2022/ehime/)
+
+<script type="module">
+document.querySelectorAll("a").forEach(function (a) {
+  Object.assign(a, {
+    target: "_blank",
+    rel: "noreferrer",
+  });
+});
+</script>
