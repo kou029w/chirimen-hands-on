@@ -190,6 +190,141 @@ node hello.js
 
 ---
 
+# 2023-01-14
+
+---
+
+## いろいろなデバイスを自由に試してみよう
+
+自分の席に着き次第、自由に進めてもらって OK 👌
+
+---
+
+## 本日の流れ
+
+ハンズオン講習会
+
+- 10:00-10:15 はじめに
+- 10:15-11:45 自由時間
+- 11:45-12:00 片付け・チーム分け発表
+
+アイディアワークショップ
+
+- 13:00-13:30 インプットトーク
+- 13:30-14:30 アイディアワークショップ
+- 14:30-16:30 各チームの作戦会議
+- 16:30-16:45 各チームの進捗共有
+- 16:45-17:00 ハッカソンの説明など
+
+---
+
+## ハッカソンのポイント
+
+- ときめくような素敵なアイディア
+- 実際に機能するモノ
+
+<!-- NOTE: 昨日・今日と技術的な話を中心にやってきましたが、極端な話ハッカソンの本番は、技術的に優れているかどうかは一旦忘れてもらってOK、コピペでOK、人の真似でOK
+ですが限られた時間しかないので、これからの時間で、やりたいことを周りのスタッフに相談したり、Slackで相談してみてください
+ -->
+
+![bg w:800 right:48%](./assets/webiotmakers-gallery.dio.png)
+
+<!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
+
+---
+
+## CHIRIMEN 対応デバイスリスト
+
+https://tutorial.chirimen.org/partslist
+
+こちらに掲載がないデバイスについても「〇〇をやりたい」「〇〇できるか気になる」などあればご相談ください
+
+---
+
+## 例
+
+- アクチュエーター
+  - LED マトリックス
+  - DC ギアードモーター・サーボモーター・ステッピングモーター
+- センサー
+  - 距離・明るさ・色・赤外線人感
+  - 水分・温湿度・気圧・CO2 濃度
+  - 重さ・重力加速度・圧力
+- その他
+  - Web ページ・動画コンテンツ・音声コンテンツ
+  - 時刻・地理・気象予報
+  - 顔検出・物体検出・音声検出・画像生成・音声生成・自然言語生成
+
+---
+
+## 応用編
+
+- I2C で複数のデバイスを扱う
+
+---
+
+## I2C で複数のデバイスを扱う
+
+それぞれのモジュールの VCC/GND/SDA/SCL を並列接続
+![h:450](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://tutorial.chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
+※ 画像にあるセンサーはあくまで例です
+スレーブアドレスが同じデバイスは同時に接続できません
+
+---
+
+## I2C で複数のデバイスを扱う - 温湿度センサーと距離センサーの例
+
+```js
+import { requestI2CAccess } from "node-web-i2c";
+import SHT30 from "@chirimen/sht30"; // 温湿度センサー SHT30
+import VL53L0X from "@chirimen/vl53l0x"; // 距離センサー VL53L0X
+
+async function main() {
+  const i2cAccess = await requestI2CAccess();
+  const port = i2cAccess.ports.get(1);
+  const sht30 = new SHT30(port, 0x44);
+  const vl53l0x = new VL53L0X(port, 0x29);
+  await sht30.init();
+  await vl53l0x.init();
+
+  while (true) {
+    const { humidity, temperature } = await sht30.readData();
+    const distance = await vl53l0x.getRange();
+    const message = [
+      `${temperature.toFixed(2)} ℃`,
+      `${humidity.toFixed(2)} %`,
+      `${distance} mm`,
+    ].join(", ");
+    console.log(message);
+    await sleep(500);
+  }
+}
+
+main();
+```
+
+SHT30 と VL53L0X を並列接続し、実行します
+
+---
+
+# Enjoy the IoT!
+
+---
+
+## ⚠ 片付け注意事項
+
+借りた電子部品は返却しましょう
+
+(詳しくは会場のスタッフが案内します)
+
+---
+
+## ハッカソンに向けて
+
+リードタイムに注意 特に海外からの発送は時間がかかるので余裕を持って
+品薄なものもあるので早めに調達を
+https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
+
 ---
 
 ## フィードバック
@@ -210,6 +345,14 @@ document.querySelectorAll("a").forEach(function (a) {
   Object.assign(a, {
     target: "_blank",
     rel: "noreferrer",
+  });
+});
+document.querySelectorAll("img").forEach(function (img) {
+  Object.assign(img, {
+    src: img.src.replace(
+      /^https:[/][/]twemoji[.]maxcdn[.]com[/]v[/][0-9.]+/,
+      "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/"
+    ),
   });
 });
 </script>
