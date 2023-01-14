@@ -332,12 +332,4 @@ document.querySelectorAll("a").forEach(function (a) {
     rel: "noreferrer",
   });
 });
-document.querySelectorAll("img").forEach(function (img) {
-  Object.assign(img, {
-    src: img.src.replace(
-      /^https:[/][/]twemoji[.]maxcdn[.]com[/]v[/][0-9.]+/,
-      "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/"
-    ),
-  });
-});
 </script>
