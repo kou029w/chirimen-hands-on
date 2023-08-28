@@ -1,18 +1,25 @@
 name: github-pages
 on:
   push:
-    branches: [main]
+    branches: main
 jobs:
-  main:
-    permissions:
-      pages: write
-      id-token: write
-    environment: github-pages
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: make build
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v2
         with:
           path: dist
-      - uses: actions/deploy-pages@v1
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v2
