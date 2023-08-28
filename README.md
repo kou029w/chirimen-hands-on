@@ -322,6 +322,7 @@ https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
 
 過去の資料
 
+- [2022 年度 東京版](/chirimen-hands-on/2022/tokyo/)
 - [2022 年度 岡山版](/chirimen-hands-on/2022/okayama/)
 - [2022 年度 愛媛版](/chirimen-hands-on/2022/ehime/)
 
