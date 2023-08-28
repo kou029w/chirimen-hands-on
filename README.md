@@ -8,7 +8,7 @@ style: |
   }
 ---
 
-# 2023-01-09
+# 2023-09-30
 
 ---
 
@@ -36,9 +36,7 @@ JavaScript からハードウェアを制御するプロトタイピング環境
 
 ---
 
-## 作品例
-
-![h:550](./assets/webiotmakers-gallery.dio.png)
+![h:600](./assets/webiotmakers-gallery.dio.png)
 
 <!-- NOTE: CHIRIMENを使い、アイディアを凝らしてさまざまな作品を作っています。 -->
 
@@ -190,7 +188,7 @@ node hello.js
 
 ---
 
-# 2023-01-14
+# 2023-10-01
 
 ---
 
