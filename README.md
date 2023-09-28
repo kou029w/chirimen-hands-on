@@ -48,15 +48,15 @@ JavaScript からハードウェアを制御するプロトタイピング環境
 
 ハンズオン講習会
 
-- 11:00-12:00
-  - L チカしてみよう
-- 12:00-13:00 〜昼休み〜
-- 13:00-16:50
+- 11:00 L チカしてみよう
+- 12:00 〜昼休み〜
+- 13:00 CHIRIMEN チュートリアル
   - GPIO に関する基礎知識
   - I2C に関する基礎知識
   - 遠隔制御してみよう
   - 常駐プログラム化してみよう
-- 16:50-17:00 片付け
+- 16:50 片付け
+- 17:00 解散
 
 ---
 
@@ -68,35 +68,35 @@ JavaScript からハードウェアを制御するプロトタイピング環境
 
 ## Slack にアクセス (まだの方)
 
-[webiotmakerschallenge.slack.com](https://webiotmakerschallenge.slack.com)
+Web IoT Makers Challenge Slack: https://webiotmakerschallenge.slack.com
 
 ---
 
-## ハンズオン資料
+## CHIRIMEN チュートリアル資料
 
-[tutorial.chirimen.org/pizero](https://tutorial.chirimen.org/pizero/)
+https://tutorial.chirimen.org/pizero/ にアクセス
+
 または
-「chirimen pi zero」で検索
+
+「chirimen pi zero」で検索 [🔍](https://www.google.com/search?q=chirimen+pi+zero)
 
 ---
 
 ## 困ったとき・分からないとき・気になることがあるとき
 
 会場のスタッフにお気軽にお声がけください 🖐
-(Slack でも OK 👌)
+Slack でも OK 👌
+
+Web IoT Makers Challenge Slack: https://webiotmakerschallenge.slack.com
 
 ---
 
 ## 機材の確認
 
-必要なもの
-
 - Raspberry Pi Zero W
 - CHIRIMEN スターターキット
   - microSD カード
 - USB ケーブル
-
-(必要なもの以外は片付けておきましょう)
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/#pcwifi -->
 
@@ -104,7 +104,11 @@ JavaScript からハードウェアを制御するプロトタイピング環境
 
 ## Raspberry Pi Zero の起動
 
-![h:400](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
+![h:360](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
+
+1. microSD カードを差し込む
+2. パソコンと USB ケーブルで接続する
+3. ターミナルに接続する
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/#a-hrefhttpschirimenorgpizerowebserialconsolepizerowebserialconsolehtmla- -->
 
@@ -114,7 +118,9 @@ JavaScript からハードウェアを制御するプロトタイピング環境
 
 https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
-↑ こちらにアクセス > Connect and Login PiZero > 接続
+1. ターミナルにアクセス
+2. [Connect and Login PiZero] を選択
+3. [接続]
 
 ![](https://d33wubrfki0l68.cloudfront.net/2521683e759f053b3a77eb7d91f3849f0711267b/84e41/pizero/imgs/serialdialog.png)
 
@@ -122,11 +128,14 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 ## Wi-Fi の設定
 
-1. wifi panel > SSID、PASS PHRASE に接続情報を入力
-2. SET WiFi
-3. Reboot
-
-(接続情報は会場で確認しましょう)
+1. [wifi panel] > [SSID] [PASS PHRASE] を入力
+2. [SET WiFi] を選択
+3. [Reboot] を選択
+4. (もう一度) ターミナルにアクセス
+5. [Connect and Login PiZero] を選択
+   - シリアルポートが表示されていれば OK ✅
+   - 起動完了まで約 2 分間かかります
+6. [接続]
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/#wifi -->
 
@@ -140,9 +149,9 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 ---
 
-## サンプルコードの作成
+## プログラムを書く
 
-"myApp" > 移動 > Create New Text > "hello.js"
+[myApp] > [移動] > [Create New Text] > "hello.js" と入力
 
 ```js
 import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
@@ -167,26 +176,50 @@ async function blink() {
 blink();
 ```
 
-または
-
-CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
+コピー&ペースト > [Save] (保存)
 
 ---
 
-## サンプルコードの実行
+## プログラムの実行
 
-実行コマンド
+"hello.js" を実行する方法
 
-```sh
+```
 node hello.js
 ```
+
+停止するには `Ctrl`+`C`
+
+書式:
+
+```
+node [ファイル名]
+```
+
+---
+
+## サンプルコードのダウンロード
+
+CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
+
+他のサンプルコードや配線図を参照することができます
 
 ---
 
 ## ここまでのまとめ
 
-- CHIRIMEN Raspberry Pi Zero W のセットアップ
-- LED を制御するサンプルコード (通称 LED チカチカ、L チカ) の実行
+- Raspberry Pi Zero W のセットアップ
+- LED を制御するプログラム (通称 LED チカチカ、L チカ) の実行
+
+---
+
+## CHIRIMEN チュートリアル資料
+
+https://tutorial.chirimen.org/pizero/ にアクセス
+
+または
+
+「chirimen pi zero」で検索 [🔍](https://www.google.com/search?q=chirimen+pi+zero)
 
 ---
 
@@ -205,17 +238,18 @@ node hello.js
 
 ハンズオン講習会
 
-- 10:00-10:15 はじめに
-- 10:15-11:45 自由時間
-- 11:45-12:00 片付け・チーム分け発表
+- 10:00 はじめに
+- 10:15 自由時間
+- 11:45 片付け・チーム分け発表
 
 アイディアワークショップ
 
-- 13:00-13:30 インプットトーク
-- 13:30-14:30 アイディアワークショップ
-- 14:30-16:20 各チームの作戦会議
-- 16:20-16:40 各チームの進捗共有
-- 16:40-17:00 ハッカソンの説明など
+- 13:00 インプットトーク
+- 13:30 アイディアワークショップ
+- 14:30 各チームの作戦会議
+- 16:20 各チームの進捗共有
+- 16:40 ハッカソンの説明など
+- 17:00 解散
 
 ---
 

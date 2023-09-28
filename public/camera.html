@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Webカメラ</title>
+  </head>
+  <body>
+    <h1>Webカメラ</h1>
+    <div id="player"></div>
+    <div id="devices"></div>
+    <script type="module">
+      const devicesElement = document.getElementById("devices");
+      const devices = (await navigator.mediaDevices.enumerateDevices()).filter(
+        ({ kind }) => kind === "videoinput",
+      );
+
+      for (const { deviceId, label } of devices) {
+        const a = document.createElement("a");
+
+        Object.assign(a, {
+          href: `#${deviceId}`,
+          textContent: `${label} #${deviceId}`,
+          style: `display: block`,
+        });
+
+        devicesElement.appendChild(a);
+      }
+
+      window.onhashchange = () => location.reload();
+
+      const deviceId = location.hash.slice(1);
+      const playerElement = document.getElementById("player");
+      const videoElement = document.createElement("video");
+      const srcObject = await navigator.mediaDevices.getUserMedia({
+        video: {
+          deviceId,
+        },
+      });
+
+      Object.assign(videoElement, {
+        controls: "controls",
+        autoplay: true,
+        muted: true,
+        srcObject,
+      });
+
+      playerElement.append(videoElement);
+    </script>
+  </body>
+</html>
