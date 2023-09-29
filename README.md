@@ -1,5 +1,5 @@
 ---
-title: CHIRIMEN Raspberry Pi Zero W ハンズオン
+title: Raspberry Pi Zero 版 CHIRIMEN
 marp: true
 paginate: true
 style: |
@@ -8,7 +8,7 @@ style: |
   }
 ---
 
-# 2023-09-30
+# 2023-09-30 ハンズオン
 
 ---
 
@@ -16,7 +16,7 @@ style: |
 
 ---
 
-# CHIRIMEN Raspberry Pi Zero W ハンズオン
+# Raspberry Pi Zero 版 CHIRIMEN ハンズオン
 
 WebDINO Japan シニアエンジニア
 [渡邉浩平](https://github.com/kou029w)
@@ -46,7 +46,7 @@ JavaScript からハードウェアを制御するプロトタイピング環境
 
 ## 本日の内容
 
-ハンズオン講習会
+Raspberry Pi Zero 版 CHIRIMEN 導入編
 
 - 11:00 L チカしてみよう
 - 12:00 〜昼休み〜
@@ -236,19 +236,19 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 ## 本日の流れ
 
-ハンズオン講習会
+Raspberry Pi Zero 版 CHIRIMEN 応用編
 
 - 10:00 はじめに
 - 10:15 自由時間
-- 11:45 片付け・チーム分け発表
+- 11:45 片付け・ハッカソンチーム分け発表
 
 アイディアワークショップ
 
-- 13:00 インプットトーク
+- 13:00 ハッカソンに向けてのインプットトーク
 - 13:30 アイディアワークショップ
-- 14:30 各チームの作戦会議
-- 16:20 各チームの進捗共有
-- 16:40 ハッカソンの説明など
+- 14:30 ハッカソンに向けてのチーム相談タイム
+- 16:20 各チームの進捗発表
+- 16:40 ハッカソンについての説明、機材貸し出し、記念撮影
 - 17:00 解散
 
 ---
