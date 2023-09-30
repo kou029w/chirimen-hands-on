@@ -256,7 +256,6 @@ Raspberry Pi Zero 版 CHIRIMEN 応用編
 ## ハッカソンのポイント
 
 - ときめくような素敵なアイディア
-- 実際に機能するモノ
 
 <!-- NOTE: 昨日・今日と技術的な話を中心にやってきましたが、極端な話ハッカソンの本番は、技術的に優れているかどうかは一旦忘れてもらってOK、コピペでOK、人の真似でOK
 ですが限られた時間しかないので、これからの時間で、やりたいことを周りのスタッフに相談したり、Slackで相談してみてください
@@ -284,53 +283,126 @@ https://tutorial.chirimen.org/partslist
 
 ---
 
-## 応用編
+## 【参考】JavaScript Primer の紹介
 
+> これから JavaScript を学びたい人が、ECMAScript 2015 以降をベースにして一から JavaScript を学べる書籍です。
+> プログラミングをやったことがあるが、今の JavaScript がよくわからないという人が、 今の JavaScript アプリケーションを読み書きできるように書かれています。
+
+[JavaScript Primer - 迷わないための入門書 #jsprimer](https://jsprimer.net/)
+
+---
+
+## 複数のデバイスを扱うヒント
+
+- GPIO と I2C を組み合わせる
 - I2C で複数のデバイスを扱う
+
+---
+
+## GPIO と I2C を組み合わせる
+
+---
+
+一定温度を超えたとき LED を点灯する例
+
+```js
+import { requestGPIOAccess } from "node-web-gpio";
+import { requestI2CAccess } from "node-web-i2c";
+import SHT30 from "@chirimen/sht30"; // 温湿度センサー SHT30
+
+const gpioAccess = await requestGPIOAccess();
+const gpioPort = gpioAccess.ports.get(26);
+await gpioPort.export("out");
+
+const i2cAccess = await requestI2CAccess();
+const i2cPort = i2cAccess.ports.get(1);
+const sht30 = new SHT30(i2cPort, 0x44);
+await sht30.init();
+
+while (true) {
+  const { temperature } = await sht30.readData();
+  console.log(`${temperature.toFixed(2)} ℃`);
+
+  if (temperature > 30) {
+    await gpioPort.write(1);
+  } else {
+    await gpioPort.write(0);
+  }
+}
+```
+
+<!-- _footer: 配線図省略 - コードをもとに想像して試してみよう！ -->
 
 ---
 
 ## I2C で複数のデバイスを扱う
 
-それぞれのモジュールの VCC/GND/SDA/SCL を並列接続
+それぞれのデバイスの VCC/GND/SDA/SCL を並列接続
 ![h:450](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://tutorial.chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
-※ 画像にあるセンサーはあくまで例です
+※ 画像にある I2C デバイスはあくまで例です
 スレーブアドレスが同じデバイスは同時に接続できません
 
 ---
 
-## I2C で複数のデバイスを扱う - 温湿度センサーと距離センサーの例
+一定温度を超えたとき NeoPixel LED を点灯する例
 
 ```js
 import { requestI2CAccess } from "node-web-i2c";
 import SHT30 from "@chirimen/sht30"; // 温湿度センサー SHT30
-import VL53L0X from "@chirimen/vl53l0x"; // 距離センサー VL53L0X
+import NPIX from "@chirimen/neopixel-i2c"; // NeoPixel I2C
 
-async function main() {
-  const i2cAccess = await requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const sht30 = new SHT30(port, 0x44);
-  const vl53l0x = new VL53L0X(port, 0x29);
-  await sht30.init();
-  await vl53l0x.init();
+const i2cAccess = await requestI2CAccess();
+const port = i2cAccess.ports.get(1);
+const sht30 = new SHT30(port, 0x44);
+await sht30.init();
+const npix = new NPIX(port, 0x41);
+await npix.init(8);
 
-  while (true) {
-    const { humidity, temperature } = await sht30.readData();
-    const distance = await vl53l0x.getRange();
-    const message = [
-      `${temperature.toFixed(2)} ℃`,
-      `${humidity.toFixed(2)} %`,
-      `${distance} mm`,
-    ].join(", ");
-    console.log(message);
-    await sleep(500);
+while (true) {
+  const { temperature } = await sht30.readData();
+  console.log(`${temperature.toFixed(2)} ℃`);
+
+  if (temperature > 30) {
+    await npix.setGlobal(20, 20, 0);
+  } else {
+    await npix.setGlobal(0, 0, 0);
   }
 }
-
-main();
 ```
 
-SHT30 と VL53L0X を並列接続し、実行します
+<!-- _footer: 配線図省略 - コードをもとに想像して試してみよう！ -->
+
+<!-- ---
+
+## I2C で複数のデバイスを扱う - 距離センサーと NeoPixel の例
+
+指定の距離を下回ると NeoPixel LED を点灯する例:
+
+```js
+import { requestI2CAccess } from "node-web-i2c";
+import VL53L0X from "@chirimen/vl53l0x";
+import NPIX from "@chirimen/neopixel-i2c";
+
+const i2cAccess = await requestI2CAccess();
+const port = i2cAccess.ports.get(1);
+
+const vl53l0x = new VL53L0X(port, 0x29);
+await vl53l0x.init();
+
+const npix = new NPIX(port, 0x41);
+await npix.init(8);
+
+while (true) {
+  const distance = await vl53l0x.getRange();
+  console.log(`${distance} mm`);
+
+  if (distance < 100) {
+    await npix.setGlobal(100, 100, 100);
+  } else {
+    await npix.setGlobal(0, 0, 0);
+  }
+}
+``` -->
 
 ---
 
@@ -338,9 +410,28 @@ SHT30 と VL53L0X を並列接続し、実行します
 
 ---
 
+## ⚠ Raspberry Pi のカメラに関する注意事項
+
+- 接続端子・フラットケーブルは壊れやすい
+  - 引っ張らない
+  - 折り曲げない
+
+カメラ接続確認コマンド:
+
+```
+$ vcgencmd get_camera
+supported=1 detected=1, libcamera interfaces=0
+```
+
+---
+
 ## ⚠ 片付け注意事項
 
 借りた電子部品は返却しましょう
+
+- Raspberry Pi Zero W
+- USB ケーブル
+- 各種貸し出しデバイス
 
 (詳しくは会場のスタッフが案内します)
 
@@ -348,25 +439,31 @@ SHT30 と VL53L0X を並列接続し、実行します
 
 ## ハッカソンに向けて
 
-リードタイムに注意 特に海外からの発送は時間がかかるので余裕を持って
-品薄なものもあるので早めに調達を
+Slack にてお気軽にご相談お寄せください
+
+今回のハンズオンをスタートとして、それぞれの目指す方向に合わせて技術習得を進めていって頂ければ幸いです
+
+---
+
+## 【参考】材料調達 Tips
+
+> ネットショップ購入のリードタイムに注意。初動が重要。
+
 https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
+
+---
+
+## 過去の資料
+
+- [2022 年度 東京版](/chirimen-hands-on/2022/tokyo/)
+- [2022 年度 岡山版](/chirimen-hands-on/2022/okayama/)
+- [2022 年度 愛媛版](/chirimen-hands-on/2022/ehime/)
 
 ---
 
 ## フィードバック
 
 [このスライドを編集する](https://github.com/kou029w/chirimen-hands-on/edit/main/README.md) / [問題を報告する](https://github.com/kou029w/chirimen-hands-on/issues/new)
-
----
-
-## 後付
-
-過去の資料
-
-- [2022 年度 東京版](/chirimen-hands-on/2022/tokyo/)
-- [2022 年度 岡山版](/chirimen-hands-on/2022/okayama/)
-- [2022 年度 愛媛版](/chirimen-hands-on/2022/ehime/)
 
 <script type="module">
 document.querySelectorAll("a").forEach(function (a) {
