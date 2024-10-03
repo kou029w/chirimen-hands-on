@@ -8,11 +8,11 @@ style: |
   }
 ---
 
-# 2024-08-10 ハンズオン
+# 2024-10-05 ハンズオン
 
 ---
 
-![bg](https://webiotmakers.github.io/static/images/2022/template/ogp.jpg)
+![bg](https://webiotmakers.github.io/static/images/2024/template/ogp.jpg)
 
 ---
 
@@ -48,13 +48,13 @@ JavaScript からハードウェアを制御するプロトタイピング環境
 
 Raspberry Pi Zero 版 CHIRIMEN 導入編
 
-- 11:00 L チカしてみよう
+- 11:00 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
 - 12:00 〜昼休み〜
 - 13:00 CHIRIMEN チュートリアル
-  - GPIO に関する基礎知識
-  - I2C に関する基礎知識
-  - 遠隔制御してみよう
-  - 常駐プログラム化してみよう
+  - [GPIO を試す](https://tutorial.chirimen.org/pizero/chapter_4.html)
+  - [I2C デバイスを試す](https://tutorial.chirimen.org/pizero/chapter_5.html)
+  - [IoT を試す](https://tutorial.chirimen.org/pizero/chapter_6.html)
+  - [常駐プログラム化する](https://tutorial.chirimen.org/pizero/chapter_7.html)
 - 16:00 片付け・解散
 
 ---
@@ -222,7 +222,7 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 ---
 
-# 2024-08-11
+# 2024-10-06
 
 ---
 
@@ -238,15 +238,15 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 Raspberry Pi Zero 版 CHIRIMEN 応用編
 
 - 10:00 自由時間
-- 11:00 片付け・ハッカソンチーム分け発表
+- 11:20 片付け・ハッカソンチーム分け発表
 
 アイディアワークショップ
 
 - 13:00 ハッカソンに向けてのインプットトーク
-- 13:30 アイディアワークショップ
-- 14:30 ハッカソンに向けてのチーム相談タイム
+- 13:15 アイディアワークショップ
+- 14:20 ハッカソンに向けてのチーム相談タイム
 - 16:20 各チームの進捗発表
-- 16:40 ハッカソンについての説明、機材貸し出し、記念撮影
+- 16:30 ハッカソンについての説明、機材貸し出し、記念撮影
 - 17:00 解散
 
 ---
