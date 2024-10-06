@@ -428,7 +428,7 @@ supported=1 detected=1, libcamera interfaces=0
 
 借りた電子部品は返却しましょう
 
-- Raspberry Pi Zero W
+- Raspberry Pi Zero W (microSD カードはプレゼント!)
 - USB ケーブル
 - 各種貸し出しデバイス
 
