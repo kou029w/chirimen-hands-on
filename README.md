@@ -55,7 +55,8 @@ Raspberry Pi Zero 版 CHIRIMEN 導入編
   - [I2C デバイスを試す](https://tutorial.chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://tutorial.chirimen.org/pizero/chapter_6.html)
   - [常駐プログラム化する](https://tutorial.chirimen.org/pizero/chapter_7.html)
-- 16:00 片付け・解散
+- 16:20 片付け
+- 16:30 解散
 
 ---
 
