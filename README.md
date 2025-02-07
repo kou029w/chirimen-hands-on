@@ -8,7 +8,7 @@ style: |
   }
 ---
 
-# 2024-10-05 ハンズオン
+# 2025-02-08 ハンズオン
 
 ---
 
@@ -48,7 +48,7 @@ JavaScript からハードウェアを制御するプロトタイピング環境
 
 Raspberry Pi Zero 版 CHIRIMEN 導入編
 
-- 11:00 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
+- 11:15 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
 - 12:00 〜昼休み〜
 - 13:00 CHIRIMEN チュートリアル
   - [GPIO を試す](https://tutorial.chirimen.org/pizero/chapter_4.html)
@@ -61,13 +61,19 @@ Raspberry Pi Zero 版 CHIRIMEN 導入編
 
 ## 本日のゴール
 
-センサーやモーターの基本的な使い方を理解する
+センサーやモーターの使い方を理解する
+
+![bg w:800 right:45%](https://webiotmakers.github.io/static/images/2024/home/schedule-handson-01.webp)
 
 ---
 
 ## Slack にアクセス (まだの方)
 
-Web IoT Makers Challenge Slack: https://webiotmakerschallenge.slack.com
+![QRコード h:350](./assets/qrcode_webiotmakerschallenge.slack.com.png)
+https://webiotmakerschallenge.slack.com
+
+- 信州会場のみなさま 👉 `#2024年度-信州参加者`
+- 徳島会場のみなさま 👉 `#2024年度-徳島参加者`
 
 ---
 
@@ -77,39 +83,33 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 または
 
-「chirimen pi zero」で検索 [🔍](https://www.google.com/search?q=chirimen+pi+zero)
+「chirimen pizero」で検索 [🔍](https://www.google.com/search?q=chirimen+pizero)
 
 ---
 
 ## 困ったとき・分からないとき・気になることがあるとき
 
-会場のスタッフにお気軽にお声がけください 🖐
-Slack でも OK 👌
+Slack や会場にいるスタッフにお気軽にお声がけください 🖐
 
-Web IoT Makers Challenge Slack: https://webiotmakerschallenge.slack.com
+Slack: https://webiotmakerschallenge.slack.com
 
 ---
 
 ## 機材の確認
 
-- Raspberry Pi Zero W
-- CHIRIMEN スターターキット
-  - microSD カード
-- USB ケーブル
+![h:500](https://tutorial.chirimen.org/pizero/imgs/PartsList2.svg)
 
-<!-- _footer: https://tutorial.chirimen.org/pizero/#pcwifi -->
+<!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-1 -->
 
 ---
 
 ## Raspberry Pi Zero の起動
 
-![h:360](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
+![h:350](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
 
 1. microSD カードを差し込む
 2. パソコンと USB ケーブルで接続する
 3. ターミナルに接続する
-
-<!-- _footer: https://tutorial.chirimen.org/pizero/#a-hrefhttpschirimenorgpizerowebserialconsolepizerowebserialconsolehtmla- -->
 
 ---
 
@@ -122,6 +122,8 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 3. [接続]
 
 ![](https://d33wubrfki0l68.cloudfront.net/2521683e759f053b3a77eb7d91f3849f0711267b/84e41/pizero/imgs/serialdialog.png)
+
+<!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-2 -->
 
 ---
 
@@ -136,7 +138,7 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
    - 起動完了まで約 2 分間かかります
 6. [接続]
 
-<!-- _footer: https://tutorial.chirimen.org/pizero/#wifi -->
+<!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-3 -->
 
 ---
 
@@ -144,7 +146,7 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 ![h:600](./assets/led-blink.dio.png)
 
-<!-- _footer: https://tutorial.chirimen.org/pizero/#section-3 -->
+<!-- _footer: https://tutorial.chirimen.org/pizero/chapter_3-1 -->
 
 ---
 
@@ -156,23 +158,19 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
 const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec)); // sleep 関数を定義
 
-async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
-  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
+const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
+const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
-  await port.export("out"); // ポートを出力モードに設定
+await port.export("out"); // ポートを出力モードに設定
 
-  // 無限ループ
-  for (;;) {
-    // 1秒間隔で LED が点滅します
-    await port.write(1); // LEDを点灯
-    await sleep(1000); // 1000 ms (1秒) 待機
-    await port.write(0); // LEDを消灯
-    await sleep(1000); // 1000 ms (1秒) 待機
-  }
+// 無限ループ
+for (;;) {
+  // 1秒間隔で LED が点滅します
+  await port.write(1); // LEDを点灯
+  await sleep(1000); // 1000 ms (1秒) 待機
+  await port.write(0); // LEDを消灯
+  await sleep(1000); // 1000 ms (1秒) 待機
 }
-
-blink();
 ```
 
 コピー&ペースト > [Save] (保存)
@@ -218,36 +216,32 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 または
 
-「chirimen pi zero」で検索 [🔍](https://www.google.com/search?q=chirimen+pi+zero)
+「chirimen pizero」で検索 [🔍](https://www.google.com/search?q=chirimen+pizero)
 
 ---
 
-# 2024-10-06
+# 2025-02-09
 
 ---
 
 ## いろいろなデバイスを自由に試してみよう
 
 - 自由に進めてもらって OK 👌
-- 席はどこでも OK 👌 (午前中)
+- 自由に実験しながらセンサー・アクチュエータに触れる時間
 
 ---
 
 ## 本日の流れ
 
-Raspberry Pi Zero 版 CHIRIMEN 応用編
-
-- 10:00 自由時間
-- 11:20 片付け・ハッカソンチーム分け発表
-
-アイディアワークショップ
-
-- 13:00 ハッカソンに向けてのインプットトーク
-- 13:15 アイディアワークショップ
-- 14:20 ハッカソンに向けてのチーム相談タイム
-- 16:20 各チームの進捗発表
-- 16:30 ハッカソンについての説明、機材貸し出し、記念撮影
-- 17:00 解散
+- 10:00 Raspberry Pi Zero 版 CHIRIMEN 応用編・自由時間
+- 11:30 片付け・ハッカソンチーム分け発表
+- 12:00 〜昼休み〜
+- 13:00 アイディアワークショップ
+  - ハッカソンに向けてのインプットトーク
+  - アイディアワークショップ
+  - ハッカソンに向けてのチーム相談タイム
+  - ハッカソンについての説明、機材貸し出し、記念撮影
+- 16:00 解散
 
 ---
 
@@ -415,11 +409,12 @@ while (true) {
   - 引っ張らない
   - 折り曲げない
 
-カメラ接続確認コマンド:
+**動作確認方法**
+
+以下のコマンドで画像ファイルが保存されます:
 
 ```
-$ vcgencmd get_camera
-supported=1 detected=1, libcamera interfaces=0
+raspistill -v --width 640 --height 480 -o test.jpg
 ```
 
 ---
