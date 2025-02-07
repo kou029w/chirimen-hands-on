@@ -73,7 +73,7 @@ Raspberry Pi Zero 版 CHIRIMEN 導入編
 ![QRコード h:350](./assets/qrcode_webiotmakerschallenge.slack.com.png)
 https://webiotmakerschallenge.slack.com
 
-- 信州会場のみなさま 👉 `#2024年度-信州参加者`
+- 塩尻・須坂会場のみなさま 👉 `#2024年度-信州参加者`
 - 徳島会場のみなさま 👉 `#2024年度-徳島参加者`
 
 ---
