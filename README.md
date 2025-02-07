@@ -19,17 +19,27 @@ style: |
 # Raspberry Pi Zero 版 CHIRIMEN ハンズオン
 
 WebDINO Japan シニアエンジニア
-[渡邉浩平](https://github.com/kou029w)
+[渡邉浩平](https://scrapbox.io/intro-to-web-dev/watanabe)
 ![w:200](https://github.com/kou029w.png)
 
 ---
 
 ## CHIRIMEN とは
 
-![h:480](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1200/https://tutorial.chirimen.org/raspi/imgs/section0/CHIRIMENforRaspberryPi3.png)
+![bg right:45% fit](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1200/https://tutorial.chirimen.org/raspi/imgs/section0/CHIRIMENforRaspberryPi3.png)
 
-JavaScript からハードウェアを制御するプロトタイピング環境
-センサーやモーターなど組み合わせたさまざまなものをつくることができます
+**プロトタイピング環境**
+
+JavaScript からハードウェアを制御
+センサーやモーターなど組み合わせた
+さまざまなものをつくることができる!
+
+**オープンな仕様**
+
+- 利用者が自由に開発に携われる!
+- 無償で閲覧可能・誰でも参加可能
+- ⇆ 一般的な IoT のイメージ
+  - 例: スマートスピーカーの消費者
 
 <!-- NOTE: 10-20年前は難しいプログラミングが必要でしたが、今はJavaScriptから簡単に作れるようになりました。 -->
 <!-- NOTE: 具体的にはWeb GPIO APIやWeb I2C APIと呼ばれるオープンな仕様に支えられているオープンソースソフトウェアです。 -->
@@ -68,13 +78,13 @@ Raspberry Pi Zero 版 CHIRIMEN 導入編
 
 ---
 
-## Slack にアクセス (まだの方)
+## Slack にアクセス
 
 ![QRコード h:350](./assets/qrcode_webiotmakerschallenge.slack.com.png)
 https://webiotmakerschallenge.slack.com
 
-- 塩尻・須坂会場のみなさま 👉 `#2024年度-信州参加者`
-- 徳島会場のみなさま 👉 `#2024年度-徳島参加者`
+- 塩尻・須坂会場のみなさま 👉 [`#2024年度-信州参加者`](https://webiotmakerschallenge.slack.com/archives/C08CPCZNL3A)
+- 徳島会場のみなさま 👉 [`#2024年度-徳島参加者`](https://webiotmakerschallenge.slack.com/archives/C08C7E8L17D)
 
 ---
 
@@ -84,15 +94,13 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 または
 
-「chirimen pizero」で検索 [🔍](https://www.google.com/search?q=chirimen+pizero)
+[`chirimen pizero`](https://www.google.com/search?q=chirimen+pizero) で検索 🔍
 
 ---
 
 ## 困ったとき・分からないとき・気になることがあるとき
 
-Slack や会場にいるスタッフにお気軽にお声がけください 🖐
-
-Slack: https://webiotmakerschallenge.slack.com
+Slack や会場にいるスタッフにお気軽にお声がけください :relaxed:
 
 ---
 
@@ -106,11 +114,11 @@ Slack: https://webiotmakerschallenge.slack.com
 
 ## Raspberry Pi Zero の起動
 
-![h:350](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
+![h:300](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
 
 1. microSD カードを差し込む
-2. パソコンと USB ケーブルで接続する
-3. ターミナルに接続する
+1. 専用ケースに入れる (オプション)
+1. パソコンと USB ケーブルで接続する
 
 ---
 
@@ -124,6 +132,8 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 ![](https://d33wubrfki0l68.cloudfront.net/2521683e759f053b3a77eb7d91f3849f0711267b/84e41/pizero/imgs/serialdialog.png)
 
+このような画面の表示があれば「接続」をクリック ✅
+
 <!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-2 -->
 
 ---
@@ -132,12 +142,22 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 1. [wifi panel] > [SSID] [PASS PHRASE] を入力
 2. [SET WiFi] を選択
-3. [Reboot] を選択
-4. (もう一度) ターミナルにアクセス
-5. [Connect and Login PiZero] を選択
+3. [wifi Info] を選択して接続の確認
+   - 青字で "Raspberry Pi's IP Address: \*\*\*" が表示されていれば OK ✅
+   - "Fail to connect chirimen.org." と表示されている場合 → NG ❌
+   - もう一度 1. からやり直す
+
+---
+
+## フリーズしたときは再起動
+
+1. USB ケーブルを抜く (電源 OFF)
+1. (もう一度) USB ケーブルを接続し起動
+1. ターミナルの画面をリロード (🔁 ボタン・`Ctrl`+`R`・`F5` キーなど)
+1. [Connect and Login PiZero] を選択
    - シリアルポートが表示されていれば OK ✅
    - 起動完了まで約 2 分間かかります
-6. [接続]
+1. (もう一度) [接続]
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-3 -->
 
