@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: make build
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
   deploy:
@@ -22,4 +22,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: deploy
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
