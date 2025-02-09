@@ -444,8 +444,6 @@ raspistill -v --width 640 --height 480 -o test.jpg
 
 借りた電子部品は返却しましょう
 
-- Raspberry Pi Zero W (microSD カードはプレゼント!)
-- USB ケーブル
 - 各種貸し出しデバイス
 
 (詳しくは会場のスタッフが案内します)
