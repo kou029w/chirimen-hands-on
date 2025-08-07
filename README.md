@@ -8,11 +8,7 @@ style: |
   }
 ---
 
-> **「モノのインターネット」を見たら、「人のインターネット」に変えていこう。**
-
-オードリー・タン
-
-# 2025-02-08 ハンズオン
+# 2025-08-09 ハンズオン
 
 ---
 
@@ -24,7 +20,25 @@ style: |
 
 WebDINO Japan シニアエンジニア
 [渡邉浩平](https://scrapbox.io/intro-to-web-dev/watanabe)
+
+---
+
+> **「モノのインターネット」を見たら、「人のインターネット」に変えていこう。**
+
+台湾元デジタル担当大臣 オードリー・タン
+
+---
+
+## プロフィール
+
 ![w:200](https://github.com/kou029w.png)
+
+**渡邉浩平 (わたなべ こうへい)**
+一般社団法人 WebDINO Japan シニアエンジニア
+
+1992 年生まれ。岡山県総社市出身。鳥取大学工学部卒。専攻は電気電子工学。
+2019 年より WebDINO Japan でエンジニアとして従事。Web 技術を軸にソフトウェアシステムのコンサルティングから設計、構築、開発、運用まで担当。
+OSS を組み合わせたりして遊ぶおじさん。
 
 ---
 
@@ -62,15 +76,15 @@ JavaScript からハードウェアを制御
 
 Raspberry Pi Zero 版 CHIRIMEN 導入編
 
-- 11:15 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
-- 12:00 〜昼休み〜
-- 13:00 CHIRIMEN チュートリアル
+- 13:50 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
+- 14:50 〜休憩〜
+- 15:00 CHIRIMEN チュートリアル
   - [GPIO を試す](https://tutorial.chirimen.org/pizero/chapter_4.html)
   - [I2C デバイスを試す](https://tutorial.chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://tutorial.chirimen.org/pizero/chapter_6.html)
   - [常駐プログラム化する](https://tutorial.chirimen.org/pizero/chapter_7.html)
-- 16:20 片付け
-- 16:30 解散
+- 17:30 メンターによる作品の紹介
+- 18:00 解散
 
 ---
 
@@ -87,8 +101,7 @@ Raspberry Pi Zero 版 CHIRIMEN 導入編
 ![QRコード h:350](./assets/qrcode_webiotmakerschallenge.slack.com.png)
 https://webiotmakerschallenge.slack.com
 
-- 塩尻・須坂会場のみなさま 👉 [`#2024年度-信州参加者`](https://webiotmakerschallenge.slack.com/archives/C08CPCZNL3A)
-- 徳島会場のみなさま 👉 [`#2024年度-徳島参加者`](https://webiotmakerschallenge.slack.com/archives/C08C7E8L17D)
+- 岡山参加者のみなさま 👉 `#2025年度-岡山参加者`
 
 ---
 
@@ -245,7 +258,7 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 ---
 
-# 2025-02-09
+# 2025-08-10
 
 ---
 
@@ -265,8 +278,8 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 ## ハッカソンのポイント
 
-- ときめくような素敵なアイディア
-- 本番で作品が機能すること
+作品の完成度より
+**やりたいことを実現すること**が大切
 
 <!-- NOTE: 昨日・今日と技術的な話を中心にやってきましたが、極端な話ハッカソンの本番は、技術的に優れているかどうかは一旦忘れてもらってOK、コピペでOK、人の真似でOK
 ですが限られた時間しかないので、これからの時間で、やりたいことを周りのスタッフに相談したり、Slackで相談してみてください
