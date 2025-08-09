@@ -334,7 +334,9 @@ https://tutorial.chirimen.org/partslist
 
 ---
 
-# Enjoy the IoT!
+> **「モノのインターネット」を見たら、「人のインターネット」に変えていこう。**
+
+台湾元デジタル担当大臣 オードリー・タン
 
 ---
 
