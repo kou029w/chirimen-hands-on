@@ -92,7 +92,7 @@ Raspberry Pi Zero 版 CHIRIMEN 導入編
 
 センサーやモーターの使い方を理解する
 
-![bg w:800 right:45%](https://webiotmakers.github.io/static/images/2024/home/schedule-handson-01.webp)
+![bg right:45%](https://webiotmakers.github.io/static/images/2024/home/schedule-handson-01.webp)
 
 ---
 
@@ -316,49 +316,6 @@ https://tutorial.chirimen.org/partslist
 
 ---
 
-## 複数のデバイスを扱うヒント
-
-- GPIO と I2C を組み合わせる
-- I2C で複数のデバイスを扱う
-
----
-
-## GPIO と I2C を組み合わせる
-
----
-
-一定温度を超えたとき LED を点灯する例
-
-```js
-import { requestGPIOAccess } from "node-web-gpio";
-import { requestI2CAccess } from "node-web-i2c";
-import SHT30 from "@chirimen/sht30"; // 温湿度センサー SHT30
-
-const gpioAccess = await requestGPIOAccess();
-const gpioPort = gpioAccess.ports.get(26);
-await gpioPort.export("out");
-
-const i2cAccess = await requestI2CAccess();
-const i2cPort = i2cAccess.ports.get(1);
-const sht30 = new SHT30(i2cPort, 0x44);
-await sht30.init();
-
-while (true) {
-  const { temperature } = await sht30.readData();
-  console.log(`${temperature.toFixed(2)} ℃`);
-
-  if (temperature > 30) {
-    await gpioPort.write(1);
-  } else {
-    await gpioPort.write(0);
-  }
-}
-```
-
-<!-- _footer: 配線図省略 - コードをもとに想像して試してみよう！ -->
-
----
-
 ## I2C で複数のデバイスを扱う
 
 それぞれのデバイスの VCC/GND/SDA/SCL を並列接続
@@ -454,17 +411,21 @@ raspistill -v --width 640 --height 480 -o test.jpg
 
 借りた電子部品は返却しましょう
 
+![bg right:48%](./assets/pizero.webp)
+
+- Raspberry Pi Zero W
+- USB ケーブル
 - 各種貸し出しデバイス
 
-(詳しくは会場のスタッフが案内します)
+(詳しくは会場のスタッフに)
 
 ---
 
 ## ハッカソンに向けて
 
-Slack にてお気軽にご相談お寄せください
+**やりたいことを実現すること**が大切
 
-今回のハンズオンをスタートとして、それぞれの目指す方向に合わせて技術習得を進めていって頂ければ幸いです
+Slack にてお気軽にご相談お寄せください
 
 ---
 
