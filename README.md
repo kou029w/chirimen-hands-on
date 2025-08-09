@@ -77,8 +77,8 @@ JavaScript からハードウェアを制御
 Raspberry Pi Zero 版 CHIRIMEN 導入編
 
 - 13:35 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
-- 14:50 〜休憩〜
-- 15:00 CHIRIMEN チュートリアル
+- 14:25 〜休憩〜
+- 14:35 CHIRIMEN チュートリアル
   - [GPIO を試す](https://tutorial.chirimen.org/pizero/chapter_4.html)
   - [I2C デバイスを試す](https://tutorial.chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://tutorial.chirimen.org/pizero/chapter_6.html)
