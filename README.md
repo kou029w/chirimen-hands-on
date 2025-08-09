@@ -272,7 +272,7 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 ## 本日の流れ
 
 - 10:00 Raspberry Pi Zero 版 CHIRIMEN 応用編・自由時間
-- 11:30 片付け・ハッカソンルール説明
+- 11:20 片付け・チーム発表
 
 ---
 
@@ -288,6 +288,10 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 ![bg w:800 right:48%](./assets/webiotmakers-gallery.dio.png)
 
 <!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
+
+---
+
+## Q. 何を作っていいか分からない
 
 ---
 
@@ -307,12 +311,30 @@ https://tutorial.chirimen.org/partslist
 
 ---
 
-## 【参考】JavaScript Primer の紹介
+## 「何を作っていいか分からない」人向け
 
-> これから JavaScript を学びたい人が、ECMAScript 2015 以降をベースにして一から JavaScript を学べる書籍です。
-> プログラミングをやったことがあるが、今の JavaScript がよくわからないという人が、 今の JavaScript アプリケーションを読み書きできるように書かれています。
+- AI に聞く
+  - Web と AI の膨大な「知識」を活用すれば OK
+  - 眼の前の課題をテーマにすればモチベーションが上がる
+  - ちょっと足してみたり、自分なりにアレンジしてみたくなる
+- できることを増やしていく
+  - できることが増えると、やりたいことも増える
+  - 世界も広がる
+  - だから作ってみよう
 
-[JavaScript Primer - 迷わないための入門書 #jsprimer](https://jsprimer.net/)
+---
+
+## ハッカソンに向けて
+
+**やりたいことを実現すること**が大切
+
+- Slack にてお気軽にご相談お寄せください
+- メンターに相談するのも OK
+- 参加者同士で相談し合うのも OK
+
+---
+
+# Enjoy the IoT!
 
 ---
 
@@ -387,10 +409,6 @@ while (true) {
 
 ---
 
-# Enjoy the IoT!
-
----
-
 ## ⚠ Raspberry Pi のカメラに関する注意事項
 
 - 接続端子・フラットケーブルは壊れやすい
@@ -418,14 +436,6 @@ raspistill -v --width 640 --height 480 -o test.jpg
 - 各種貸し出しデバイス
 
 (詳しくは会場のスタッフに)
-
----
-
-## ハッカソンに向けて
-
-**やりたいことを実現すること**が大切
-
-Slack にてお気軽にご相談お寄せください
 
 ---
 
