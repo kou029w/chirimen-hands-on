@@ -8,7 +8,7 @@ style: |
   }
 ---
 
-# 2025-08-09 ハンズオン
+# 2025-08-18 ハンズオン
 
 ---
 
@@ -76,15 +76,14 @@ JavaScript からハードウェアを制御
 
 Raspberry Pi Zero 版 CHIRIMEN 導入編
 
-- 13:35 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
-- 14:25 〜休憩〜
-- 14:35 CHIRIMEN チュートリアル
+- 11:15 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
+- 12:00 〜休憩〜
+- 13:00 CHIRIMEN チュートリアル
   - [GPIO を試す](https://tutorial.chirimen.org/pizero/chapter_4.html)
   - [I2C デバイスを試す](https://tutorial.chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://tutorial.chirimen.org/pizero/chapter_6.html)
   - [常駐プログラム化する](https://tutorial.chirimen.org/pizero/chapter_7.html)
-- 17:30 メンターによる作品の紹介
-- 18:00 解散
+- 16:20 片付け (明日も使うので機材はそのままで構いません)
 
 ---
 
@@ -101,7 +100,7 @@ Raspberry Pi Zero 版 CHIRIMEN 導入編
 ![QRコード h:350](./assets/qrcode_webiotmakerschallenge.slack.com.png)
 https://webiotmakerschallenge.slack.com
 
-- 岡山参加者のみなさま 👉 `#2025年度-岡山参加者`
+- 参加者のみなさま 👉 `#2025年度-信州参加者`
 
 ---
 
@@ -258,7 +257,7 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 ---
 
-# 2025-08-10
+# 2025-08-19
 
 ---
 
