@@ -271,7 +271,7 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 ## 本日の流れ
 
 - 10:00 Raspberry Pi Zero 版 CHIRIMEN 応用編・自由時間
-- 11:20 片付け・チーム発表
+- 11:20 片付け・ハッカソンのルール説明
 
 ---
 
