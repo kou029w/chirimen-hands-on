@@ -12,7 +12,7 @@ style: |
 
 ---
 
-![bg](https://webiotmakers.github.io/static/images/2024/template/ogp.jpg)
+![bg](https://webiotmakers.github.io/static/images/2025/template/ogp.jpg)
 
 ---
 
