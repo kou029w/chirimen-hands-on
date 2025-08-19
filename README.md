@@ -432,8 +432,6 @@ raspistill -v --width 640 --height 480 -o test.jpg
 
 ![bg right:48%](./assets/pizero.webp)
 
-- Raspberry Pi Zero W
-- USB ケーブル
 - 各種貸し出しデバイス
 
 (詳しくは会場のスタッフに)
