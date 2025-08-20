@@ -8,7 +8,7 @@ style: |
   }
 ---
 
-# 2025-08-18 ハンズオン
+# 2025-08-23 ハンズオン
 
 ---
 
@@ -100,7 +100,7 @@ Raspberry Pi Zero 版 CHIRIMEN 導入編
 ![QRコード h:350](./assets/qrcode_webiotmakerschallenge.slack.com.png)
 https://webiotmakerschallenge.slack.com
 
-- 参加者のみなさま 👉 `#2025年度-信州参加者`
+- 参加者のみなさま 👉 `#2025年度-三重参加者`
 
 ---
 
@@ -257,7 +257,7 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 ---
 
-# 2025-08-19
+# 2025-08-24
 
 ---
 
