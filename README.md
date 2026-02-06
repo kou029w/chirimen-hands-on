@@ -451,7 +451,7 @@ li {
 }
 
 a, a:visited {
-  color: var(--ink);
+  color: #0b75cb;
 }
 
 section strong {
