@@ -267,7 +267,7 @@ chirimen pizero で検索 🔍
 
 ```js
 import { requestI2CAccess } from "node-web-i2c";
-import SHT30 from "@chirimen/sht30"; // 温度と湿度センサー SHT30
+import SHT30 from "@chirimen/sht30"; // 温度・湿度センサー SHT30
 import NPIX from "@chirimen/neopixel-i2c"; // NeoPixel I2C
 const i2cAccess = await requestI2CAccess();
 const port = i2cAccess.ports.get(1);
