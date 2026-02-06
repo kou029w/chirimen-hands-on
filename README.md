@@ -450,6 +450,10 @@ li {
   font-size: 1rem;
 }
 
+a, a:visited {
+  color: var(--ink);
+}
+
 section strong {
   background: linear-gradient(transparent 60%, rgba(255, 213, 79, 0.7) 60%);
   padding: 0 0.25rem;
