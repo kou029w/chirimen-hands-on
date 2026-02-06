@@ -1,14 +1,9 @@
 ---
-title: Raspberry Pi Zero 版 CHIRIMEN
 marp: true
 paginate: true
-style: |
-  section :is(h1, h2, h3, h4, h5, h6) {
-    border-bottom: 10px solid #F5CE52;
-  }
 ---
 
-# 2025-08-23 ハンズオン
+# 2026-02-07 ハンズオン
 
 ---
 
@@ -16,16 +11,12 @@ style: |
 
 ---
 
-# Raspberry Pi Zero 版 CHIRIMEN ハンズオン
+# Raspberry Pi Zero 版<br>CHIRIMEN ハンズオン
 
-WebDINO Japan シニアエンジニア
+WebDINO Japan エンジニア
 [渡邉浩平](https://scrapbox.io/intro-to-web-dev/watanabe)
 
----
-
-> **「モノのインターネット」を見たら、「人のインターネット」に変えていこう。**
-
-台湾元デジタル担当大臣 オードリー・タン
+むずかしい言葉が出てきたら、お気軽にご質問ください :relaxed:
 
 ---
 
@@ -34,95 +25,72 @@ WebDINO Japan シニアエンジニア
 ![w:200](https://github.com/kou029w.png)
 
 **渡邉浩平 (わたなべ こうへい)**
-一般社団法人 WebDINO Japan シニアエンジニア
+一般社団法人 WebDINO Japan エンジニア
 
-1992 年生まれ。岡山県総社市出身。鳥取大学工学部卒。専攻は電気電子工学。
-2019 年より WebDINO Japan でエンジニアとして従事。Web 技術を軸にソフトウェアシステムのコンサルティングから設計、構築、開発、運用まで担当。
-OSS を組み合わせたりして遊ぶおじさん。
+1992 年生まれ。岡山県総社市出身。鳥取大学工学部卒。
+2019 年から WebDINO Japan で、Web の仕事をしています。
+OSSを組み合わせてコンピューターで遊ぶのが好きです。
 
 ---
 
-## CHIRIMEN とは
-
-![bg right:45% fit](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1200/https://tutorial.chirimen.org/raspi/imgs/section0/CHIRIMENforRaspberryPi3.png)
-
-**プロトタイピング環境**
-
-JavaScript からハードウェアを制御
-センサーやモーターなど組み合わせた
-さまざまなものをつくることができる!
-
-**オープンな仕様**
-
-- 利用者が自由に開発に携われる!
-- 無償で閲覧可能・誰でも参加可能
-- ⇆ 一般的な IoT のイメージ
-  - 例: スマートスピーカーの消費者
+![bg](./assets/overview.webp)
 
 <!-- NOTE: 10-20年前は難しいプログラミングが必要でしたが、今はJavaScriptから簡単に作れるようになりました。 -->
 <!-- NOTE: 具体的にはWeb GPIO APIやWeb I2C APIと呼ばれるオープンな仕様に支えられているオープンソースソフトウェアです。 -->
 
 ---
 
-![h:600](./assets/webiotmakers-gallery.dio.png)
-
-<!-- NOTE: CHIRIMENを使い、アイディアを凝らしてさまざまな作品を作っています。 -->
-
-<!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
-
----
-
 ## 本日の内容
 
-Raspberry Pi Zero 版 CHIRIMEN 導入編
+Raspberry Pi Zero 版 CHIRIMEN のはじめ
 
-- 13:50 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
-- 15:00 〜休憩〜
-- 15:15 CHIRIMEN チュートリアル
+- 11:15 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
+- 12:00 〜昼休憩〜
+- 13:00 CHIRIMEN チュートリアル
   - [GPIO を試す](https://tutorial.chirimen.org/pizero/chapter_4.html)
   - [I2C デバイスを試す](https://tutorial.chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://tutorial.chirimen.org/pizero/chapter_6.html)
   - [常駐プログラム化する](https://tutorial.chirimen.org/pizero/chapter_7.html)
-- 17:30 解散
+- 16:30 解散
 
 ---
 
 ## 本日のゴール
 
-センサーやモーターの使い方を理解する
+CHIRIMENでセンサーやモーターを動かして電子工作を楽しもう
 
-![bg right:45%](https://webiotmakers.github.io/static/images/2024/home/schedule-handson-01.webp)
+![bg right:50%](https://webiotmakers.github.io/static/images/2024/home/schedule-handson-01.webp)
 
 ---
 
 ## Slack にアクセス
 
-![QRコード h:350](./assets/qrcode_webiotmakerschallenge.slack.com.png)
+![QRコード h:320](./assets/qrcode_webiotmakerschallenge.slack.com.webp)
 https://webiotmakerschallenge.slack.com
 
-- 参加者のみなさま 👉 `#2025年度-三重参加者`
+👉 `2025年度-徳島参加者`
 
 ---
 
 ## CHIRIMEN チュートリアル資料
 
+![QRコード h:320](./assets/qrcode_chirimen.org.webp)
+
 https://tutorial.chirimen.org/pizero/ にアクセス
 
-または
-
-[`chirimen pizero`](https://www.google.com/search?q=chirimen+pizero) で検索 🔍
+または [chirimen pizero で検索 🔍](https://www.google.com/search?q=chirimen+pizero)
 
 ---
 
-## 困ったとき・分からないとき・気になることがあるとき
+## 困ったとき・分からないとき
 
-Slack や会場にいるスタッフにお気軽にお声がけください :relaxed:
+Slack や会場のスタッフに気軽に声をかけてください :relaxed:
 
 ---
 
-## 機材の確認
+## 用意するもの
 
-![h:500](https://tutorial.chirimen.org/pizero/imgs/PartsList2.svg)
+![bg right:68%](https://tutorial.chirimen.org/pizero/imgs/PartsList2.svg)
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-1 -->
 
@@ -146,9 +114,9 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 2. [Connect and Login PiZero] を選択
 3. [接続]
 
-![](https://d33wubrfki0l68.cloudfront.net/2521683e759f053b3a77eb7d91f3849f0711267b/84e41/pizero/imgs/serialdialog.png)
+![h:240](https://d33wubrfki0l68.cloudfront.net/2521683e759f053b3a77eb7d91f3849f0711267b/84e41/pizero/imgs/serialdialog.png)
 
-このような画面の表示があれば「接続」をクリック ✅
+このような画面が出たら「接続」をクリック ✅
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-2 -->
 
@@ -158,32 +126,37 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 1. [wifi panel] > [SSID] [PASS PHRASE] を入力
 2. [SET WiFi] を選択
-3. [wifi Info] を選択して接続の確認
-   - 青字で "Raspberry Pi's IP Address: \*\*\*" が表示されていれば OK ✅
-   - "Fail to connect chirimen.org." と表示されている場合 → NG ❌
-   - もう一度 1. からやり直す
+3. [wifi Info] を選択して接続を確認
+
+- 青字で "Raspberry Pi's IP Address: \*\*\*" が出たら OK ✅
+- "Fail to connect chirimen.org." が出たら NG ❌
+- もう一度 1. からやり直す
 
 ---
 
 ## フリーズしたときは再起動
 
 1. USB ケーブルを抜く (電源 OFF)
-1. (もう一度) USB ケーブルを接続し起動
+1. (もう一度) USB ケーブルを接続して起動
 1. ターミナルの画面をリロード (🔁 ボタン・`Ctrl`+`R`・`F5` キーなど)
 1. [Connect and Login PiZero] を選択
    - シリアルポートが表示されていれば OK ✅
-   - 起動完了まで約 2 分間かかります
+
+- 起動完了まで約 2 分かかります
+
 1. (もう一度) [接続]
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-3 -->
 
 ---
 
-## ブレッドボードでの配線
-
-![h:600](./assets/led-blink.dio.png)
+## <span style="white-space: nowrap;">ブレッドボードでの配線</span>
 
 <!-- _footer: https://tutorial.chirimen.org/pizero/chapter_3-1 -->
+
+---
+
+![bg 90%](./assets/led-blink.excalidraw.svg)
 
 ---
 
@@ -222,7 +195,7 @@ for (;;) {
 node hello.js
 ```
 
-停止するには `Ctrl`+`C`
+止めるには `Ctrl`+`C`
 
 書式:
 
@@ -236,7 +209,7 @@ node [ファイル名]
 
 CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
-他のサンプルコードや配線図を参照することができます
+ほかのサンプルコードや配線図を見られます
 
 ---
 
@@ -253,119 +226,61 @@ https://tutorial.chirimen.org/pizero/ にアクセス
 
 または
 
-「chirimen pizero」で検索 [🔍](https://www.google.com/search?q=chirimen+pizero)
+chirimen pizero で検索 🔍
 
 ---
 
-# 2025-08-24
-
----
-
-## いろいろなデバイスを自由に試してみよう
-
-- 自由に進めてもらって OK 👌
-- 自由に実験しながらセンサー・アクチュエータに触れる時間
+# 2026-02-08
 
 ---
 
 ## 本日の流れ
 
-- 10:00 Raspberry Pi Zero 版 CHIRIMEN 応用編・自由時間
-- 11:20 片付け・チーム分け発表
+- 10:00 タイムテーブル説明
+- 10:05 自由に触く時間
+- 11:00 接続方法のおさらい・I2C でデバイス扱い、カメラの注意事項
+- 11:15 片付け
+- 11:20 ハッカソンに向けてのポイント・チーム分け発表
 
 ---
 
-## ハッカソンのポイント
+## 自由に触く時間
 
-作品の完成度より
-**やりたいことを実現すること**が大切
+いろいろなデバイスを自由に試してみよう
 
-<!-- NOTE: 昨日・今日と技術的な話を中心にやってきましたが、極端な話ハッカソンの本番は、技術的に優れているかどうかは一旦忘れてもらってOK、コピペでOK、人の真似でOK
-ですが限られた時間しかないので、これからの時間で、やりたいことを周りのスタッフに相談したり、Slackで相談してみてください
- -->
-
-![bg w:800 right:48%](./assets/webiotmakers-gallery.dio.png)
-
-<!-- _footer: 画像の引用元: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
-
----
-
-## Q. 何を作っていいか分からない
-
----
-
-## 【参考】過去の作品ギャラリー
-
-「Web×IoT メイカーズチャレンジ」で検索 > ハッカソン作品集
-または
-https://webiotmakers.github.io/gallery/
-
----
-
-## 【参考】CHIRIMEN 対応デバイスの一覧
-
-https://tutorial.chirimen.org/partslist
-
-こちらに掲載がないデバイスについても「〇〇をやりたい」「〇〇できるか気になる」などあればご相談ください
-
----
-
-## 「何を作っていいか分からない」人向け
-
-- AI に聞く
-  - Web と AI の膨大な「知識」を活用すれば OK
-  - 眼の前の課題をテーマにすればモチベーションが上がる
-  - ちょっと足してみたり、自分なりにアレンジしてみたくなる
-- できることを増やしていく
-  - できることが増えると、やりたいことも増える
-  - 世界も広がる
-  - だから作ってみよう
-
----
-
-## ハッカソンに向けて
-
-**やりたいことを実現すること**が大切
-
-- Slack にてお気軽にご相談お寄せください
-- メンターに相談するのも OK
-- 参加者同士で相談し合うのも OK
-
----
-
-> **「モノのインターネット」を見たら、「人のインターネット」に変えていこう。**
-
-台湾元デジタル担当大臣 オードリー・タン
+- 自分のペースで進めて OK 👌
+- 実験しながらセンサー・アクチュエータに触れる時間
 
 ---
 
 ## I2C で複数のデバイスを扱う
 
-それぞれのデバイスの VCC/GND/SDA/SCL を並列接続
-![h:450](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://tutorial.chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
-※ 画像にある I2C デバイスはあくまで例です
+それぞれのデバイスの VCC/GND/SDA/SCL を並列接続します
+
+![h:340](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://tutorial.chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
+※ 画像にある I2C デバイスは例です
 スレーブアドレスが同じデバイスは同時に接続できません
 
 ---
 
-一定温度を超えたとき NeoPixel LED を点灯する例
+## I2C 組み合わせて扱う例
 
 ```js
 import { requestI2CAccess } from "node-web-i2c";
 import SHT30 from "@chirimen/sht30"; // 温湿度センサー SHT30
 import NPIX from "@chirimen/neopixel-i2c"; // NeoPixel I2C
-
 const i2cAccess = await requestI2CAccess();
 const port = i2cAccess.ports.get(1);
 const sht30 = new SHT30(port, 0x44);
-await sht30.init();
 const npix = new NPIX(port, 0x41);
+await sht30.init();
 await npix.init(8);
 
 while (true) {
   const { temperature } = await sht30.readData();
   console.log(`${temperature.toFixed(2)} ℃`);
 
+  // 🌡 この温度を超えたら LED が点灯!
   if (temperature > 30) {
     await npix.setGlobal(20, 20, 0);
   } else {
@@ -373,40 +288,6 @@ while (true) {
   }
 }
 ```
-
-<!-- _footer: 配線図省略 - コードをもとに想像して試してみよう！ -->
-
-<!-- ---
-
-## I2C で複数のデバイスを扱う - 距離センサーと NeoPixel の例
-
-指定の距離を下回ると NeoPixel LED を点灯する例:
-
-```js
-import { requestI2CAccess } from "node-web-i2c";
-import VL53L0X from "@chirimen/vl53l0x";
-import NPIX from "@chirimen/neopixel-i2c";
-
-const i2cAccess = await requestI2CAccess();
-const port = i2cAccess.ports.get(1);
-
-const vl53l0x = new VL53L0X(port, 0x29);
-await vl53l0x.init();
-
-const npix = new NPIX(port, 0x41);
-await npix.init(8);
-
-while (true) {
-  const distance = await vl53l0x.getRange();
-  console.log(`${distance} mm`);
-
-  if (distance < 100) {
-    await npix.setGlobal(100, 100, 100);
-  } else {
-    await npix.setGlobal(0, 0, 0);
-  }
-}
-``` -->
 
 ---
 
@@ -438,16 +319,69 @@ raspistill -v --width 640 --height 480 -o test.jpg
 
 ---
 
-## 【参考】材料調達 Tips
+## ハッカソンに向けてのポイント
 
-> ネットショップ購入のリードタイムに注意。初動が重要。
+作品の完成度より、
+**やりたいことを形にすること**が大切
+
+<!-- NOTE: 昨日・今日と技術的な話を中心にやってきましたが、極端な話ハッカソンの本番は、技術的に優れているかどうかは一旦忘れてもらってOK、コピペでOK、人の真似でOK
+ですが限られた時間しかないので、これからの時間で、やりたいことを周りのスタッフに相談したり、Slackで相談してみてください
+ -->
+
+<!-- _footer: Web×IoT メイカーズチャレンジ 作品ギャラリー https://webiotmakers.github.io/gallery/ -->
+
+---
+
+## 何を作っていいか分からない人へ
+
+- AI に聞く
+  - Web と AI の知識を使えば OK
+  - 目の前の課題をテーマにするとやる気が出る
+  - ちょっと足して自分なりにアレンジできる
+- できることを増やす
+  - できることが増えると、やりたいことも増える
+  - 世界が広がる
+  - だから作ってみよう
+
+---
+
+## 【参考】過去の作品ギャラリー
+
+「Web×IoT メイカーズチャレンジ」で検索 > ハッカソン作品集
+または
+https://webiotmakers.github.io/gallery/
+
+---
+
+## 【参考】CHIRIMEN 対応デバイスの一覧
+
+https://tutorial.chirimen.org/partslist
+
+ここにないデバイスでも「〇〇をやりたい」「〇〇できる?」があれば相談してください
+
+---
+
+## 【参考】材料を買うときのヒント
+
+ネットで買うときは届くまでの日数に注意。早めに買って試してみよう。
 
 https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
 
 ---
 
+## ハッカソンに向けて
+
+**やりたいことを形にすること**が大切
+
+- Slack で気軽に相談してください
+- メンターに相談するのも OK
+- 参加者同士で相談するのも OK
+
+---
+
 ## 過去の資料
 
+- [2025 年版](/chirimen-hands-on/2025/)
 - [2023 年度 岡山版](/chirimen-hands-on/2023/okayama/)
 - [2022 年度 東京版](/chirimen-hands-on/2022/tokyo/)
 - [2022 年度 岡山版](/chirimen-hands-on/2022/okayama/)
@@ -467,3 +401,82 @@ document.querySelectorAll("a").forEach(function (a) {
   });
 });
 </script>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Zen+Maru+Gothic:wght@500;700&display=swap");
+
+:root {
+  --bg: #fffaf0;
+  --ink: #1f2a44;
+  --sun: #ffd54f;
+  --sky: #90caf9;
+  --leaf: #a5d6a7;
+  --coral: #ff8a65;
+}
+
+section {
+  font-family: "Zen Maru Gothic", "Baloo 2", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 213, 79, 0.35) 0 180px, transparent 181px),
+    radial-gradient(circle at 92% 18%, rgba(144, 202, 249, 0.35) 0 160px, transparent 161px),
+    radial-gradient(circle at 12% 85%, rgba(165, 214, 167, 0.35) 0 170px, transparent 171px),
+    radial-gradient(circle at 88% 88%, rgba(255, 138, 101, 0.35) 0 150px, transparent 151px),
+    repeating-linear-gradient(45deg, rgba(31, 42, 68, 0.03) 0 8px, rgba(31, 42, 68, 0.01) 8px 16px),
+    var(--bg);
+  padding: 0 1.25rem;
+}
+
+section :is(h1, h2, h3, h4, h5, h6) {
+  border-bottom: 0.5rem solid var(--sun);
+  display: inline-block;
+  padding: 0 0.75rem 0.125rem;
+  border-radius: 0.625rem;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0.25rem 0.25rem 0 rgba(31, 42, 68, 0.15);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+p,
+li {
+  font-size: 1rem;
+}
+
+section strong {
+  background: linear-gradient(transparent 60%, rgba(255, 213, 79, 0.7) 60%);
+  padding: 0 0.25rem;
+}
+
+section blockquote {
+  border-left: 0.5rem solid var(--sky);
+  background: rgba(144, 202, 249, 0.15);
+  padding: 0.875rem 1.125rem;
+  border-radius: 0.75rem;
+  box-shadow: 0.1875rem 0.25rem 0 rgba(31, 42, 68, 0.12);
+}
+
+section code {
+  background: rgba(255, 255, 255, 0.9);
+  border: 0.125rem dashed rgba(31, 42, 68, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.125rem 0.375rem;
+  vertical-align: baseline;
+}
+
+section pre {
+  border: 0.1875rem solid rgba(31, 42, 68, 0.12);
+  border-radius: 1rem;
+  box-shadow: 0.25rem 0.375rem 0 rgba(31, 42, 68, 0.15);
+  background: rgba(255, 255, 255, 0.92);
+  line-height: 1.35;
+  font-size: 0.85rem;
+}
+</style>
