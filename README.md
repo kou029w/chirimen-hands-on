@@ -24,7 +24,7 @@ WebDINO Japan エンジニア
 
 ![w:200](https://github.com/kou029w.png)
 
-**渡邉浩平 (わたなべ こうへい)**
+**<ruby>渡邉<rt>わたなべ</rt></ruby><ruby>浩平<rt>こうへい</rt></ruby>**
 一般社団法人 WebDINO Japan エンジニア
 
 1992 年生まれ。岡山県総社市出身。鳥取大学工学部卒。
@@ -44,13 +44,13 @@ OSSを組み合わせてコンピューターで遊ぶのが好きです。
 
 Raspberry Pi Zero 版 CHIRIMEN のはじめ
 
-- 11:15 [Hello Real World（L チカを実行する）](https://tutorial.chirimen.org/pizero/chapter_3.html)
+- 11:15 [Hello Real World（L チカを実行する）](https://chirimen.org/pizero/chapter_3.html)
 - 12:00 〜昼休憩〜
 - 13:00 CHIRIMEN チュートリアル
-  - [GPIO を試す](https://tutorial.chirimen.org/pizero/chapter_4.html)
-  - [I2C デバイスを試す](https://tutorial.chirimen.org/pizero/chapter_5.html)
-  - [IoT を試す](https://tutorial.chirimen.org/pizero/chapter_6.html)
-  - [常駐プログラム化する](https://tutorial.chirimen.org/pizero/chapter_7.html)
+  - [GPIO を試す](https://chirimen.org/pizero/chapter_4.html)
+  - [I2C デバイスを試す](https://chirimen.org/pizero/chapter_5.html)
+  - [IoT を試す](https://chirimen.org/pizero/chapter_6.html)
+  - [常駐プログラム化する](https://chirimen.org/pizero/chapter_7.html)
 - 16:30 解散
 
 ---
@@ -76,7 +76,7 @@ https://webiotmakerschallenge.slack.com
 
 ![QRコード h:320](./assets/qrcode_chirimen.org.webp)
 
-https://tutorial.chirimen.org/pizero/ にアクセス
+https://chirimen.org/pizero/ にアクセス
 
 または [chirimen pizero で検索 🔍](https://www.google.com/search?q=chirimen+pizero)
 
@@ -90,9 +90,9 @@ Slack や会場のスタッフに気軽に声をかけてください :relaxed:
 
 ## 用意するもの
 
-![bg right:68%](https://tutorial.chirimen.org/pizero/imgs/PartsList2.svg)
+![bg right:68%](https://chirimen.org/pizero/imgs/PartsList2.svg)
 
-<!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-1 -->
+<!-- _footer: https://chirimen.org/pizero/chapter_2-1 -->
 
 ---
 
@@ -118,7 +118,7 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 このような画面が出たら「接続」をクリック ✅
 
-<!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-2 -->
+<!-- _footer: https://chirimen.org/pizero/chapter_2-2 -->
 
 ---
 
@@ -146,17 +146,17 @@ https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html
 
 1. (もう一度) [接続]
 
-<!-- _footer: https://tutorial.chirimen.org/pizero/chapter_2-3 -->
+<!-- _footer: https://chirimen.org/pizero/chapter_2-3 -->
 
 ---
 
-## <span style="white-space: nowrap;">ブレッドボードでの配線</span>
+## ブレッドボードでの配線
 
-<!-- _footer: https://tutorial.chirimen.org/pizero/chapter_3-1 -->
+https://chirimen.org/pizero/chapter_3-1
 
 ---
 
-![bg 90%](./assets/led-blink.excalidraw.svg)
+![](./assets/led-blink.excalidraw.svg)
 
 ---
 
@@ -222,7 +222,7 @@ CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
 ## CHIRIMEN チュートリアル資料
 
-https://tutorial.chirimen.org/pizero/ にアクセス
+https://chirimen.org/pizero/ にアクセス
 
 または
 
@@ -257,7 +257,7 @@ chirimen pizero で検索 🔍
 
 それぞれのデバイスの VCC/GND/SDA/SCL を並列接続します
 
-![h:340](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://tutorial.chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
+![h:340](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
 ※ 画像にある I2C デバイスは例です
 スレーブアドレスが同じデバイスは同時に接続できません
 
@@ -355,7 +355,7 @@ https://webiotmakers.github.io/gallery/
 
 ## 【参考】CHIRIMEN 対応デバイスの一覧
 
-https://tutorial.chirimen.org/partslist
+https://chirimen.org/partslist
 
 ここにないデバイスでも「〇〇をやりたい」「〇〇できる?」があれば相談してください
 
