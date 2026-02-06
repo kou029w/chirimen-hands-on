@@ -27,7 +27,7 @@ WebDINO Japan エンジニア
 **<ruby>渡邉<rt>わたなべ</rt></ruby><ruby>浩平<rt>こうへい</rt></ruby>**
 一般社団法人 WebDINO Japan エンジニア
 
-1992 年生まれ。岡山県総社市出身。鳥取大学工学部卒。
+1992 年生まれ。岡山県<ruby>総社市<rt>そうじゃし</rt></ruby>出身。鳥取大学工学部卒。
 2019 年から WebDINO Japan で、Web の仕事をしています。
 OSSを組み合わせてコンピューターで遊ぶのが好きです。
 
@@ -50,7 +50,7 @@ Raspberry Pi Zero 版 CHIRIMEN のはじめ
   - [GPIO を試す](https://chirimen.org/pizero/chapter_4.html)
   - [I2C デバイスを試す](https://chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://chirimen.org/pizero/chapter_6.html)
-  - [常駐プログラム化する](https://chirimen.org/pizero/chapter_7.html)
+  - [<ruby>常駐<rt>じょうちゅう</rt></ruby>プログラム化する](https://chirimen.org/pizero/chapter_7.html)
 - 16:30 解散
 
 ---
@@ -255,7 +255,7 @@ chirimen pizero で検索 🔍
 
 ## I2C で複数のデバイスを扱う
 
-それぞれのデバイスの VCC/GND/SDA/SCL を並列接続します
+それぞれのデバイスの VCC/<ruby>GND<rt>グランド</rt></ruby>/SDA/SCL を並列接続します
 
 ![h:340](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
 ※ 画像にある I2C デバイスは例です
@@ -267,7 +267,7 @@ chirimen pizero で検索 🔍
 
 ```js
 import { requestI2CAccess } from "node-web-i2c";
-import SHT30 from "@chirimen/sht30"; // 温湿度センサー SHT30
+import SHT30 from "@chirimen/sht30"; // 温度・湿度センサー SHT30
 import NPIX from "@chirimen/neopixel-i2c"; // NeoPixel I2C
 const i2cAccess = await requestI2CAccess();
 const port = i2cAccess.ports.get(1);
@@ -293,7 +293,7 @@ while (true) {
 
 ## ⚠ Raspberry Pi のカメラに関する注意事項
 
-- 接続端子・フラットケーブルは壊れやすい
+- 接続<ruby>端子<rt>たんし</rt></ruby>・フラットケーブルは壊れやすい
   - 引っ張らない
   - 折り曲げない
 
