@@ -232,7 +232,7 @@ CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
 ---
 
-## 自由に触く時間
+## 自由時間
 
 いろいろなデバイスを自由に試してみよう
 
