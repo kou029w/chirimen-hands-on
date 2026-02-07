@@ -220,16 +220,6 @@ CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
 ---
 
-## CHIRIMEN チュートリアル資料
-
-https://chirimen.org/pizero/ にアクセス
-
-または
-
-chirimen pizero で検索 🔍
-
----
-
 # 2026-02-08
 
 ---
