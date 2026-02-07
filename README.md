@@ -42,9 +42,9 @@ OSSを組み合わせてコンピューターで遊ぶのが好きです。
 
 ## 本日の内容
 
-Raspberry Pi Zero 版 CHIRIMEN のはじめ
+<ruby>CHIRIMEN<rt>ちりめん</rt></ruby> ワークショップ
 
-- 11:15 [Hello Real World（L チカを実行する）](https://chirimen.org/pizero/chapter_3.html)
+- 11:15 [Hello Real World 〜LEDを光らせてみよう〜](https://chirimen.org/pizero/chapter_3.html)
 - 12:00 〜昼休憩〜
 - 13:00 CHIRIMEN チュートリアル
   - [GPIO を試す](https://chirimen.org/pizero/chapter_4.html)
