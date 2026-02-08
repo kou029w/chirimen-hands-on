@@ -1,4 +1,4 @@
----
+  ---
 marp: true
 paginate: true
 ---
@@ -236,8 +236,9 @@ CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
 いろいろなデバイスを自由に試してみよう
 
+- センサー・アクチュエータに触れる実験時間
+- デバイス決める 👉 [応用センサーキットの使い方](https://chirimen.org/pizero/chapter_8-1) を読みながら試す
 - 自分のペースで進めて OK 👌
-- 実験しながらセンサー・アクチュエータに触れる時間
 
 ---
 
