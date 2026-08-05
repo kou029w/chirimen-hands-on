@@ -3,7 +3,7 @@ marp: true
 paginate: true
 ---
 
-# 2026-02-07 ハンズオン
+# 2026-08-08 ハンズオン
 
 ---
 
@@ -44,14 +44,14 @@ OSSを組み合わせてコンピューターで遊ぶのが好きです。
 
 <ruby>CHIRIMEN<rt>ちりめん</rt></ruby> ワークショップ
 
-- 11:15 [Hello Real World 〜LEDを光らせてみよう〜](https://chirimen.org/pizero/chapter_3.html)
-- 12:00 〜昼休憩〜
-- 13:00 CHIRIMEN チュートリアル
+- 13:40 [Hello Real World 〜LEDを光らせてみよう〜](https://chirimen.org/pizero/chapter_3.html)
+- 〜休憩〜
+- 15:00 CHIRIMEN チュートリアル
   - [GPIO を試す](https://chirimen.org/pizero/chapter_4.html)
   - [I2C デバイスを試す](https://chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://chirimen.org/pizero/chapter_6.html)
   - [<ruby>常駐<rt>じょうちゅう</rt></ruby>プログラム化する](https://chirimen.org/pizero/chapter_7.html)
-- 16:30 解散
+- 17:30 DAY 1 終了
 
 ---
 
@@ -68,7 +68,7 @@ CHIRIMENでセンサーやモーターを動かして電子工作を楽しもう
 ![QRコード h:320](./assets/qrcode_webiotmakerschallenge.slack.com.webp)
 https://webiotmakerschallenge.slack.com
 
-👉 `2025年度-徳島参加者`
+👉 `2026年度-岡山参加者`
 
 ---
 
@@ -220,23 +220,23 @@ CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
 ---
 
-# 2026-02-08
+# 2026-08-09
 
 ---
 
 ## 本日の流れ
 
-- 10:30 タイムテーブル説明・接続方法のおさらい・I2C でデバイス扱い、カメラの注意事項
-- 10:40 自由時間
-- 11:45 片付け
+- 10:00 CHIRIMEN チュートリアルの続き・自由時間
+- 11:20 片付け・チーム分け発表
+- 11:35 アイスブレイク
 
 ---
 
 ## 自由時間
 
-いろいろなデバイスを自由に試してみよう
+前日のチュートリアルの続きをやってみよう
 
-- センサー・アクチュエータに触れる実験時間
+- Example 集を見ながらいろいろなデバイスを試す、または自分の好きなものを作ってみよう
 - デバイス決める 👉 [応用センサーキットの使い方](https://chirimen.org/pizero/chapter_8-1) を読みながら試す
 - 自分のペースで進めて OK 👌
 
@@ -280,29 +280,14 @@ while (true) {
 
 ---
 
-## ⚠ Raspberry Pi のカメラに関する注意事項
-
-- 接続<ruby>端子<rt>たんし</rt></ruby>・フラットケーブルは壊れやすい
-  - 引っ張らない
-  - 折り曲げない
-
-**動作確認方法**
-
-以下のコマンドで画像ファイルが保存されます:
-
-```
-raspistill -v --width 640 --height 480 -o test.jpg
-```
-
----
-
 ## ⚠ 片付け注意事項
 
-借りた電子部品は返却しましょう
+借りた機材は返却しましょう
 
 ![bg right:48%](./assets/pizero.webp)
 
-- 各種貸し出しデバイス
+- Raspberry Pi・USB ケーブル (SD カードの抜き忘れに注意)
+- 応用センサーキットの中身
 
 (詳しくは会場のスタッフに)
 
@@ -367,7 +352,8 @@ https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
 
 ## 過去の資料
 
-- [2025 年版](/chirimen-hands-on/2025/)
+- [2025 年度 徳島版](/chirimen-hands-on/2025/tokushima/)
+- [2025 年度 三重版](/chirimen-hands-on/2025/mie/)
 - [2023 年度 岡山版](/chirimen-hands-on/2023/okayama/)
 - [2022 年度 東京版](/chirimen-hands-on/2022/tokyo/)
 - [2022 年度 岡山版](/chirimen-hands-on/2022/okayama/)
