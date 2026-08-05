@@ -7,7 +7,7 @@ paginate: true
 
 ---
 
-![bg](https://webiotmakers.github.io/static/images/2025/template/ogp.jpg)
+![bg](https://webiotmakers.github.io/static/images/2026/template/ogp.jpg)
 
 ---
 
