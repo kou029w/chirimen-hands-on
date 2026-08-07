@@ -287,6 +287,7 @@ while (true) {
 ![bg right:48%](./assets/pizero.webp)
 
 - Raspberry Pi・USB ケーブル (SD カードの抜き忘れに注意)
+- SD カード
 - 応用センサーキットの中身
 
 (詳しくは会場のスタッフに)
