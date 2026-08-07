@@ -50,7 +50,7 @@ OSSを組み合わせてコンピューターで遊ぶのが好きです。
   - [GPIO を試す](https://chirimen.org/pizero/chapter_4.html)
   - [I2C デバイスを試す](https://chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://chirimen.org/pizero/chapter_6.html)
-  - [<ruby>常駐<rt>じょうちゅう</rt></ruby>プログラム化する](https://chirimen.org/pizero/chapter_7.html)
+  - [AIアシスタントを活用する](https://chirimen.org/pizero/using-ai-assistant)
 - 17:30 DAY 1 終了
 
 ---
