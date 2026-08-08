@@ -44,7 +44,7 @@ OSSを組み合わせてコンピューターで遊ぶのが好きです。
 
 <ruby>CHIRIMEN<rt>ちりめん</rt></ruby> ワークショップ
 
-- 13:40 [Hello Real World 〜LEDを光らせてみよう〜](https://chirimen.org/pizero/chapter_3.html)
+- 13:45 [Hello Real World 〜LEDを光らせてみよう〜](https://chirimen.org/pizero/chapter_3.html)
 - 〜休憩〜
 - 15:00 CHIRIMEN チュートリアル
   - [GPIO を試す](https://chirimen.org/pizero/chapter_4.html)
