@@ -46,7 +46,7 @@ OSSを組み合わせてコンピューターで遊ぶのが好きです。
 
 - 13:45 [Hello Real World 〜LEDを光らせてみよう〜](https://chirimen.org/pizero/chapter_3.html)
 - 〜休憩〜
-- 15:00 CHIRIMEN チュートリアル
+- 14:35 CHIRIMEN チュートリアル
   - [GPIO を試す](https://chirimen.org/pizero/chapter_4.html)
   - [I2C デバイスを試す](https://chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://chirimen.org/pizero/chapter_6.html)
@@ -242,44 +242,6 @@ CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
 ---
 
-## I2C で複数のデバイスを扱う
-
-それぞれのデバイスの VCC/<ruby>GND<rt>グランド</rt></ruby>/SDA/SCL を並列接続します
-
-![h:340](https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_1000/https://chirimen.org/raspi/imgs/section3/bh1750-and-adt7410.jpg)
-※ 画像にある I2C デバイスは例です
-スレーブアドレスが同じデバイスは同時に接続できません
-
----
-
-## I2C 組み合わせて扱う例
-
-```js
-import { requestI2CAccess } from "node-web-i2c";
-import SHT30 from "@chirimen/sht30"; // 温度・湿度センサー SHT30
-import NPIX from "@chirimen/neopixel-i2c"; // NeoPixel I2C
-const i2cAccess = await requestI2CAccess();
-const port = i2cAccess.ports.get(1);
-const sht30 = new SHT30(port, 0x44);
-const npix = new NPIX(port, 0x41);
-await sht30.init();
-await npix.init(8);
-
-while (true) {
-  const { temperature } = await sht30.readData();
-  console.log(`${temperature.toFixed(2)} ℃`);
-
-  // 🌡 この温度を超えたら LED が点灯!
-  if (temperature > 30) {
-    await npix.setGlobal(20, 20, 0);
-  } else {
-    await npix.setGlobal(0, 0, 0);
-  }
-}
-```
-
----
-
 ## ⚠ 片付け注意事項
 
 借りた機材は返却しましょう
@@ -306,14 +268,7 @@ while (true) {
 
 ---
 
-## 何を作っていいか分からない人へ
-
-- **間違えよう**: たくさん試して、たくさん間違えよう
-- **プランB歓迎**: 最初の計画に縛られすぎず、作り始めてから変えていこう
-- **自分の言葉で説明してみよう**: 他の人やAIに説明してみると理解が深まるかも
-
-迷ったら、**一番ワクワクするもの**を選びましょう。
-技術的に難しそうでも、気にしなくて大丈夫。作りながら学べます。
+## 岡山の魅力！
 
 ---
 
