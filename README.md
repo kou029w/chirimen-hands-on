@@ -268,10 +268,6 @@ CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
 ---
 
-## 岡山の魅力
-
----
-
 ## 【参考】過去の作品ギャラリー
 
 「Web×IoT メイカーズチャレンジ」で検索 > ハッカソン作品集
@@ -303,6 +299,35 @@ https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
 - Slack で気軽に相談してください
 - メンターに相談するのも OK
 - 参加者同士で相談するのも OK
+
+---
+
+## 岡山の<br>魅力
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap");
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  text-align: center;
+  line-height: 1.05;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-weight: 900;
+  font-size: 42vb;
+}
+</style>
 
 ---
 
