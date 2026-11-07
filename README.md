@@ -3,7 +3,7 @@ marp: true
 paginate: true
 ---
 
-# 2026-08-08 ハンズオン
+# 2026-11-07 ハンズオン
 
 ---
 
@@ -16,6 +16,7 @@ paginate: true
 WebDINO Japan エンジニア
 [渡邉浩平](https://scrapbox.io/intro-to-web-dev/watanabe)
 
+本日はオンラインからお届けします 💻
 むずかしい言葉が出てきたら、お気軽にご質問ください :relaxed:
 
 ---
@@ -44,14 +45,14 @@ OSSを組み合わせてコンピューターで遊ぶのが好きです。
 
 <ruby>CHIRIMEN<rt>ちりめん</rt></ruby> ワークショップ
 
-- 13:45 [Hello Real World 〜LEDを光らせてみよう〜](https://chirimen.org/pizero/chapter_3.html)
+- 13:50 [Hello Real World 〜LEDを光らせてみよう〜](https://chirimen.org/pizero/chapter_3.html)
 - 〜休憩〜
-- 14:35 CHIRIMEN チュートリアル
+- 15:00 CHIRIMEN チュートリアル
   - [GPIO を試す](https://chirimen.org/pizero/chapter_4.html)
   - [I2C デバイスを試す](https://chirimen.org/pizero/chapter_5.html)
   - [IoT を試す](https://chirimen.org/pizero/chapter_6.html)
   - [AIアシスタントを活用する](https://chirimen.org/pizero/using-ai-assistant)
-- 17:30 DAY 1 終了
+- 18:00 DAY 1 終了
 
 ---
 
@@ -68,7 +69,7 @@ CHIRIMENでセンサーやモーターを動かして電子工作を楽しもう
 ![QRコード h:320](./assets/qrcode_webiotmakerschallenge.slack.com.webp)
 https://webiotmakerschallenge.slack.com
 
-👉 `2026年度-岡山参加者`
+👉 `2026年度-秋田参加者`
 
 ---
 
@@ -85,6 +86,8 @@ https://chirimen.org/pizero/ にアクセス
 ## 困ったとき・分からないとき
 
 Slack や会場のスタッフに気軽に声をかけてください :relaxed:
+
+講師はオンラインで参加しています。画面や音声が届かないときも会場のスタッフへ
 
 ---
 
@@ -220,7 +223,7 @@ CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
 ---
 
-# 2026-08-09
+# 2026-11-08
 
 ---
 
@@ -228,7 +231,7 @@ CHIRIMEN panel > Get Examples > hello-real-world (L チカ) > JS GET
 
 - 10:00 CHIRIMEN チュートリアルの続き・自由時間
 - 11:20 片付け・チーム分け発表
-- 11:35 アイスブレイク
+- 11:30 アイスブレイク
 
 ---
 
@@ -300,9 +303,9 @@ https://gist.github.com/elie-j/8a27e7a65a40371e0cda5754ce0a063d
 - メンターに相談するのも OK
 - 参加者同士で相談するのも OK
 
----
+<!-----
 
-## 岡山の<br>魅力
+## 秋田の<br>魅力
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap");
@@ -327,12 +330,13 @@ h2 {
   font-weight: 900;
   font-size: 42vb;
 }
-</style>
+</style>-->
 
 ---
 
 ## 過去の資料
 
+- [2026 年度 岡山版](/chirimen-hands-on/2026/okayama/)
 - [2025 年度 徳島版](/chirimen-hands-on/2025/tokushima/)
 - [2025 年度 三重版](/chirimen-hands-on/2025/mie/)
 - [2023 年度 岡山版](/chirimen-hands-on/2023/okayama/)
