@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ワークシート (A4 両面)</title>
+<link rel="stylesheet" href="print.css">
+<style>
+.wish { font-size: 15pt; font-weight: 700; padding: 6mm 4mm 5mm; }
+.wish .blank { height: 9mm; vertical-align: bottom; }
+.flow { display: grid; grid-template-columns: 1fr 6mm 1fr 6mm 1fr; align-items: stretch; gap: 1mm; }
+.flow .box { height: 34mm; }
+.flow .arr { align-self: center; text-align: center; }
+.rules { display: flex; gap: 5mm; font-size: 9pt; }
+.rules span::before { content: "□ "; }
+
+.round { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 1.5mm; }
+.round h2 { display: flex; justify-content: space-between; align-items: baseline; }
+.round h2 small { font-weight: 500; }
+.pmqe { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; border: 0.5mm solid #1f2a44; border-radius: 3mm; overflow: hidden; }
+.pmqe div { padding: 1mm 3mm; font-size: 9pt; color: #55607a; }
+.pmqe div:nth-child(odd) { border-right: 0.5mm solid #1f2a44; }
+.pmqe div:nth-child(-n+2) { border-bottom: 0.5mm solid #1f2a44; }
+.pmqe b { font-size: 16pt; color: #1f2a44; margin-right: 2mm; }
+.next { display: flex; align-items: flex-end; gap: 2mm; height: 9mm; font-size: 10pt; white-space: nowrap; }
+.next .blank { flex: 1; }
+</style>
+</head>
+<body>
+
+<!-- 表: 聞く -->
+<section class="page s2">
+  <div class="head">
+    <h1><span class="num">2</span>聞く</h1>
+    <div class="fill">名前<span></span> 相手<span></span></div>
+  </div>
+
+  <div class="box grow lines" style="display:flex; flex-direction:column">
+    <h2 style="background:#fff; align-self:flex-start; padding-right:2mm">「最近、ちょっと面倒なこと・困ったことは？」</h2>
+    <small style="background:#fff; align-self:flex-start; padding-right:2mm">相手の言葉のままメモする</small>
+  </div>
+
+  <div class="rules note">
+    <span>解決策を言わない</span>
+    <span>「たとえばいつ？」「どうして？」と聞く</span>
+  </div>
+
+  <div class="box wish">
+    <span class="blank" style="width:38mm"></span> さんは、
+    <span class="blank" style="width:78mm"></span> したい
+    <div class="note" style="font-weight:500; margin-top:2mm">動詞ひとつで書く。例: 忘れ物に 気づきたい / 朝、ちゃんと 起きたい　→ 相手に見せて確かめる</div>
+  </div>
+
+  <div>
+    <h2 style="margin-bottom:1.5mm">しくみにする</h2>
+    <div class="flow">
+      <div class="box"><h2>入力</h2><small>何を知る？ (例: 温度センサー)</small></div>
+      <div class="arr">▶</div>
+      <div class="box"><h2>条件</h2><small>もし〜なら (例: 28℃ 以上なら)</small></div>
+      <div class="arr">▶</div>
+      <div class="box"><h2>出力</h2><small>どうなる？ (例: LED が点滅)</small></div>
+    </div>
+  </div>
+
+  <div class="foot"><span><img src="cc-by.svg" alt="CC BY"> © 2026 渡邉浩平 CC BY 4.0</span><span>ワークシート 表</span></div>
+</section>
+
+<!-- 裏: 作って試す -->
+<section class="page s3">
+  <div class="head">
+    <h1><span class="num">3</span>作って試す</h1>
+    <div class="fill">作った人<span></span></div>
+  </div>
+  <p class="note">試した人が書く。作った人は説明しない。使う様子を見る</p>
+
+  <div class="round">
+    <h2>1 周目</h2>
+    <div class="pmqe"><div><b>＋</b>よかった</div><div><b>−</b>いまいち</div><div><b>？</b>わからなかった</div><div><b>！</b>ひらめいた</div></div>
+    <div class="next">次に変えること<span class="blank"></span></div>
+  </div>
+  <div class="round">
+    <h2>2 周目</h2>
+    <div class="pmqe"><div><b>＋</b>よかった</div><div><b>−</b>いまいち</div><div><b>？</b>わからなかった</div><div><b>！</b>ひらめいた</div></div>
+    <div class="next">次に変えること<span class="blank"></span></div>
+  </div>
+  <div class="round">
+    <h2>3 周目</h2>
+    <div class="pmqe"><div><b>＋</b>よかった</div><div><b>−</b>いまいち</div><div><b>？</b>わからなかった</div><div><b>！</b>ひらめいた</div></div>
+    <div class="next">次に変えること<span class="blank"></span></div>
+  </div>
+
+  <div class="foot"><span><img src="cc-by.svg" alt="CC BY"> © 2026 渡邉浩平 CC BY 4.0</span><span>ワークシート 裏</span></div>
+</section>
+
+</body>
+</html>

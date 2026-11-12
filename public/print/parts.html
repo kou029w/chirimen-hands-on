@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>部品の一覧 (A4 横)</title>
+<link rel="stylesheet" href="print.css">
+<style>
+.cols { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.25fr 1fr; gap: 5mm; }
+.col { display: flex; flex-direction: column; gap: 2mm; }
+.col > h2 { padding: 1mm 3mm; border-radius: 2mm; color: #fff; }
+.in > h2 { background: #4a90d9; }
+.out > h2 { background: #d9603b; }
+table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+th, td { padding: 1.2mm 2mm; border-bottom: 0.2mm solid #c9ced9; text-align: left; vertical-align: top; }
+th { font-size: 8pt; color: #55607a; font-weight: 500; border-bottom: 0.4mm solid #1f2a44; }
+td:first-child { font-weight: 700; white-space: nowrap; }
+td small { display: block; font-weight: 500; }
+td code { white-space: nowrap; }
+.kit { font-size: 7.5pt; border: 0.2mm solid #1f2a44; border-radius: 1mm; padding: 0 1mm; white-space: nowrap; }
+.how { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; font-size: 9pt; }
+.how ol { padding-left: 5mm; }
+</style>
+</head>
+<body>
+
+<section class="page landscape">
+  <div class="head">
+    <h1>部品の一覧　<small>入力 → プログラム (もし〜なら) → 出力</small></h1>
+    <div class="note"><span class="kit">基</span> スターターキット　<span class="kit">応</span> 応用センサーセット (みんなで共有)</div>
+  </div>
+
+  <div class="cols">
+    <div class="col in">
+      <h2>入力　まわりの様子を知る</h2>
+      <table>
+        <tr><th>部品</th><th>わかること</th><th>見本の ID</th><th></th></tr>
+        <tr><td>タクトスイッチ</td><td>押した・離した</td><td><code>gpio-onchange</code></td><td><span class="kit">基</span></td></tr>
+        <tr><td>温湿度センサー<small>SHT30</small></td><td>温度 (℃)・湿度 (%)</td><td><code>sht30</code></td><td><span class="kit">基</span></td></tr>
+        <tr><td>人感センサー</td><td>人が動いた</td><td><code>gpio-onchange</code></td><td><span class="kit">応</span></td></tr>
+        <tr><td>距離センサー<small>VL53L0X</small></td><td>ものまでの距離 (mm)</td><td><code>vl53l0x</code></td><td><span class="kit">応</span></td></tr>
+        <tr><td>照度センサー<small>BH1750</small></td><td>明るさ (lx)</td><td><code>bh1750</code></td><td><span class="kit">応</span></td></tr>
+        <tr><td>温湿度・気圧センサー<small>BME280</small></td><td>温度・湿度・気圧</td><td><code>bme280</code></td><td><span class="kit">応</span></td></tr>
+        <tr><td>非接触温度センサー<small>MLX90614</small></td><td>さわらずに表面の温度</td><td><code>mlx90614</code></td><td><span class="kit">応</span></td></tr>
+        <tr><td>サーモグラフィー<small>AMG8833</small></td><td>温度の分布 (8×8 マス)</td><td><code>amg8833</code></td><td><span class="kit">応</span></td></tr>
+        <tr><td>つまみ・水位・土の水分<small>ADS1115 と組み合わせる</small></td><td>回した量・水の高さ・土のしめり</td><td><code>ads1x15</code></td><td><span class="kit">応</span></td></tr>
+      </table>
+    </div>
+
+    <div class="col out">
+      <h2>出力　はたらきかける</h2>
+      <table>
+        <tr><th>部品</th><th>できること</th><th>見本の ID</th><th></th></tr>
+        <tr><td>LED</td><td>光る・点滅する</td><td><code>hello-real-world</code></td><td><span class="kit">基</span></td></tr>
+        <tr><td>ミニモーター<small>MOSFET と組み合わせる</small></td><td>回る・止まる</td><td><code>hello-real-world</code></td><td><span class="kit">基</span></td></tr>
+        <tr><td>カラー LED<small>Neopixel</small></td><td>好きな色で光る</td><td><code>neopixel-i2c</code></td><td><span class="kit">応</span></td></tr>
+        <tr><td>サーボモーター<small>PCA9685 と組み合わせる</small></td><td>決めた角度に動く</td><td><code>pca9685</code></td><td><span class="kit">応</span></td></tr>
+        <tr><td>DC モーター<small>MX1508 と組み合わせる</small></td><td>回る・逆に回る</td><td><code>hbridge1</code></td><td><span class="kit">応</span></td></tr>
+      </table>
+      <div class="box" style="font-size:9pt; margin-top:auto">
+        <h2>組み合わせの見本</h2>
+        温湿度センサー + LED: 決まった温度で光る <code>sht30_led</code><br>
+        スマホから DC モーターを動かす <code>remote_hbridge1</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="how box">
+    <div>
+      <h2>見本の取り方</h2>
+      <ol>
+        <li>[CHIRIMEN Panel] &gt; [Get Examples] で ID を探す</li>
+        <li>回路図のとおりに配線する</li>
+        <li>[JS GET] &gt; <code>node main-○○.js</code> で実行 (止めるには Ctrl+C)</li>
+      </ol>
+    </div>
+    <div>
+      <h2>見分け方</h2>
+      基板に印刷された文字 (例: BH1750) を見る。回路図と形がちがっても、同じ文字のピンどうしをつなぐ。<br>
+      使い方: chirimen.org/pizero/chapter_8-1
+    </div>
+  </div>
+
+  <div class="foot"><span><img src="cc-by.svg" alt="CC BY"> © 2026 渡邉浩平 CC BY 4.0</span><span>部品の一覧</span></div>
+</section>
+
+</body>
+</html>

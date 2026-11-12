@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap");
+
+/* 白黒印刷でも読めるよう、色ではなく線と文字で区別する */
+@page { size: A4; margin: 12mm; }
+@page landscape { size: A4 landscape; margin: 10mm; }
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+  font-weight: 500;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #1f2a44;
+}
+
+body { margin: 0; }
+
+.page {
+  width: 186mm;
+  height: 272mm;
+  display: flex;
+  flex-direction: column;
+  gap: 4mm;
+  overflow: hidden;
+  break-after: page;
+}
+
+.page.landscape { page: landscape; width: 277mm; height: 189mm; }
+.page:last-child { break-after: auto; }
+
+@media screen {
+  body { background: #eee; padding: 8mm; }
+  .page { background: #fff; padding: 0; margin: 0 auto 8mm; outline: 12mm solid #fff; outline-offset: 0; margin-block: 20mm; }
+}
+
+h1, h2, h3, p, ul, ol { margin: 0; }
+h1 { font-size: 15pt; line-height: 1.3; }
+h2 { font-size: 12pt; }
+small, .note { font-size: 8.5pt; color: #55607a; }
+code { font-family: ui-monospace, "DejaVu Sans Mono", monospace; font-size: 0.92em; }
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 6mm;
+  padding-bottom: 2mm;
+  border-bottom: 1.2mm solid var(--step, #1f2a44);
+}
+
+.head .fill { display: flex; gap: 6mm; font-size: 10pt; white-space: nowrap; }
+.head .fill span { display: inline-block; width: 38mm; border-bottom: 0.3mm solid #1f2a44; }
+
+.s1 { --step: #e0b100; }
+.s2 { --step: #4a90d9; }
+.s3 { --step: #5aa85e; }
+
+.num {
+  display: inline-grid;
+  place-items: center;
+  width: 8mm;
+  height: 8mm;
+  margin-right: 2mm;
+  border-radius: 50%;
+  background: var(--step, #1f2a44);
+  color: #fff;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.box {
+  border: 0.5mm solid #1f2a44;
+  border-radius: 3mm;
+  padding: 3mm 4mm;
+}
+
+.box > h2 { margin-bottom: 1mm; }
+.grow { flex: 1; min-height: 0; }
+
+.lines {
+  background: repeating-linear-gradient(to bottom, transparent 0 8.6mm, #c9ced9 8.6mm 9mm);
+}
+
+.blank { display: inline-block; border-bottom: 0.4mm solid #1f2a44; }
+
+.foot { display: flex; justify-content: space-between; align-items: center; font-size: 7.5pt; color: #55607a; }
+.foot img { height: 4mm; vertical-align: middle; margin-right: 1mm; }

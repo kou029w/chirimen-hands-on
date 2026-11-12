@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>早見表 (A4 両面)</title>
+<link rel="stylesheet" href="print.css">
+<style>
+ol, ul { padding-left: 5.5mm; }
+.qr > img { float: right; width: 30mm; height: 30mm; margin: -1mm -2mm -1mm 3mm; }
+li { margin: 0.6mm 0; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+pre { margin: 1mm 0; padding: 1.5mm 3mm; border: 0.3mm solid #c9ced9; border-radius: 2mm; font-size: 8pt; line-height: 1.35; white-space: pre-wrap; }
+.url { font-size: 9pt; word-break: break-all; }
+figure { margin: 0; display: flex; flex-direction: column; min-height: 0; }
+figure img { flex: 1; min-height: 0; width: 100%; object-fit: contain; }
+figcaption { font-weight: 700; font-size: 10pt; }
+figcaption small { font-weight: 500; }
+.figs { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 4mm; }
+.figs figure { border: 0.5mm solid #1f2a44; border-radius: 3mm; padding: 2mm 3mm; overflow: hidden; }
+</style>
+</head>
+<body>
+
+<!-- 表: 手順 -->
+<section class="page s1">
+  <div class="head">
+    <h1><span class="num">1</span>動かす　<small>早見表</small></h1>
+    <div class="note">資料: chirimen.org/pizero</div>
+  </div>
+
+  <div class="box qr">
+    <img src="qrcode_pizero-terminal.png" alt="ターミナルの QR コード">
+    <h2>つなぐ</h2>
+    <ol>
+      <li>microSD カードを差し、パソコンと USB ケーブルでつなぐ (起動まで約 2 分)</li>
+      <li>ターミナルを開く<div class="url">chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html</div></li>
+      <li>[Connect and Login PiZero] &gt; [接続]</li>
+      <li>[wifi panel] に SSID とパスフレーズを入れて [SET WiFi] &gt; [wifi Info] で確認</li>
+    </ol>
+  </div>
+
+  <div class="two">
+    <div class="box">
+      <h2>書く</h2>
+      [myApp] &gt; [移動] &gt; [Create New Text]<br>
+      ファイル名を入れて書く &gt; [Save]
+    </div>
+    <div class="box">
+      <h2>動かす・止める</h2>
+      <pre>node hello.js</pre>
+      止めるには <b>Ctrl + C</b>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>LED を点滅させる (hello.js)</h2>
+<pre>import { requestGPIOAccess } from "node-web-gpio";
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const gpioAccess = await requestGPIOAccess();
+const port = gpioAccess.ports.get(26); // 26 番ポート
+
+await port.export("out"); // 出力モード
+
+while (true) {
+  await port.write(1); // 点灯
+  await sleep(1000);   // 1000 ms 待つ ← この数字を変えてみよう
+  await port.write(0); // 消灯
+  await sleep(1000);
+}</pre>
+  </div>
+
+  <div class="box">
+    <h2>見本を取る</h2>
+    [CHIRIMEN Panel] &gt; [Get Examples] &gt; ID を探す &gt; 回路図のとおりに配線 &gt; [JS GET] &gt; <code>node main-○○.js</code>
+  </div>
+
+  <div class="box grow">
+    <h2>困ったとき</h2>
+    <ul>
+      <li><b>画面が固まった</b>: USB ケーブルを抜く &gt; もう一度つなぐ &gt; ターミナルを再読み込み &gt; [Connect and Login PiZero]</li>
+      <li><b>LED が光らない</b>: LED の向き (足の長いほうが GPIO 側)、差したピンの番号を見直す</li>
+      <li><b>センサーが動かない</b>: [i2c detect] に番号が出るか見る。出なければ配線を見直す</li>
+      <li><b>エラーが出た</b>: ファイル名のまちがい、[Save] のし忘れを見直す</li>
+      <li><b>配線を変えるとき</b>: USB ケーブルを抜いてから</li>
+    </ul>
+  </div>
+
+  <div class="foot"><span><img src="cc-by.svg" alt="CC BY"> © 2026 渡邉浩平 CC BY 4.0</span><span>早見表 表</span></div>
+</section>
+
+<!-- 裏: 配線図 -->
+<section class="page s1">
+  <div class="head">
+    <h1>配線図</h1>
+    <div class="note">赤は電源 (3.3V)、黒は GND にそろえる</div>
+  </div>
+
+  <div class="figs">
+    <figure>
+      <figcaption>LED <small><code>hello-real-world</code></small></figcaption>
+      <img src="https://chirimen.org/pizero/imgs/pizero_led.png" alt="LED の配線図">
+    </figure>
+    <figure>
+      <figcaption>温湿度センサー <small><code>sht30</code></small></figcaption>
+      <img src="https://chirimen.org/pizero/imgs/pizero_sht30.png" alt="SHT30 の配線図">
+    </figure>
+    <figure>
+      <figcaption>温湿度センサー + LED <small><code>sht30_led</code></small></figcaption>
+      <img src="https://chirimen.org/pizero/imgs/SHT30_LED.png" alt="SHT30 と LED の配線図">
+    </figure>
+    <figure>
+      <figcaption>ピンの並び</figcaption>
+      <img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Zero のピン配置">
+    </figure>
+  </div>
+
+  <div class="foot"><span><img src="cc-by.svg" alt="CC BY"> © 2026 渡邉浩平 CC BY 4.0　図: chirimen.org</span><span>早見表 裏</span></div>
+</section>
+
+</body>
+</html>
