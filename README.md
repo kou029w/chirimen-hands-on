@@ -306,8 +306,10 @@ node main-sht30.js
 
 ---
 
-![bg](./assets/overview.webp)
+![bg contain](./assets/partslist-overview.webp)
 
+<!-- _backgroundColor: #fff -->
+<!-- _backgroundImage: none -->
 <!-- _header: "" -->
 <!-- _footer: 参考: https://chirimen.org/partslist -->
 
