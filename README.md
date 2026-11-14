@@ -502,7 +502,8 @@ LED のペーパーランプを作ろう
 
 ## ペーパーランプの作り方 (1/2)
 
-![bg right:40% contain](./assets/paper-lamp.webp)
+![bg right:40% vertical contain](./assets/paper-lamp.webp)
+![bg contain](./assets/paper-lamp-assembly.webp)
 
 [型紙](./print/paper-lamp.pdf) を「実際のサイズ (100%)」で印刷
 
@@ -525,6 +526,13 @@ LED のペーパーランプを作ろう
 7. 足を前へ開いて左右をそろえ、左足ののりしろを右足の下に貼る
    その上にブレッドボードを置く
 8. LED の足を前へ曲げ、コネクタに挿す
+
+---
+
+## 完成イメージ
+
+![bg right:68% contain](./assets/paper-lamp-side.webp)
+![bg contain](./assets/paper-lamp-front.webp)
 
 ---
 
